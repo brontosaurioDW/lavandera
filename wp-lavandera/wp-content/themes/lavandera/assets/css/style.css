@@ -1,0 +1,613 @@
+/**
+Site: HL;
+
+*/
+
+/**
+ * Table of Contents
+ * 1.0 - Reset CSS
+ * 2.0 - General
+ 	* 2.1 - Colors & Fonts guide
+ 	* 2.2 - Buttons
+ 	* 2.3 - Headers
+ * 3.0 - Navbar
+ 	* 3.1 - All
+ 	* 3.2 - Mobile
+ 	* 3.3 - Desktop
+ * 4.0 - Footer
+ 	* 4.1 - General
+ 	* 4.2 - Mobile
+ * 5.0 - Cover
+ 	* 5.1 - General
+ * 6.0 - Dates
+ 	* 6.1 - Container and list
+ 	* 6.2 - Link
+ 	* 6.3 - Desktop
+
+* 7.0 - News
+ 	* 7.1 - Container and list 	
+ 	* 7.2 - Desktop
+ */
+
+
+/* =====================
+   1.0 Reset css
+   ===================== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img{
+	max-width: 100%;
+}
+
+html{
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+/* =====================
+    2.0 General
+   ===================== */
+
+/* 2.1 Colors & Fonts guide
+------------------------
+*/
+
+.black {
+	color: #373737;
+}
+
+.blue {
+	color: #24659E;
+}
+
+.semi-bold {
+	font-weight: 600;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.extra-bold {
+	font-weight: 800;
+}
+
+/* 2.2 Buttons
+------------------------
+*/
+
+/* 2.3 Headers
+------------------------
+*/
+
+h1 {
+	font-size: 25px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+h2 {
+	margin: 15px 0;
+	font-size: 32px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+/* =====================
+    3.0 Navbar
+   ===================== */
+
+/* 3.1 All
+------------------------
+*/
+
+.navbar-all {
+	padding: 15px;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(194,194,194,0.5);
+	-moz-box-shadow: 0px 1px 2px 0px rgba(194,194,194,0.5);
+	box-shadow: 0px 1px 2px 0px rgba(194,194,194,0.5);
+}
+
+.navbar-all .icon{
+	font-size: 25px;
+}
+
+.navbar-all .icon:hover,
+.navbar-all .icon:focus {
+	color: #373737;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.navbar-all .navbar-toggler {
+	padding: 0;
+}
+
+.menu-mobile .show {
+	height: 100vh;
+}
+
+.menu-mobile .menu-mobile-list {
+	margin-top: 20px;
+}
+
+.menu-mobile .menu-mobile-list li {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.menu-mobile .menu-mobile-list li a {
+    display: block;
+    padding: 20px 0;
+	color: #373737;
+	letter-spacing: 5px;
+}
+
+
+.social-icons li {
+	display: inline-block;
+	padding: 0 15px;
+	font-size: 25px;
+}
+
+/* 3.2 Mobile
+------------------------
+*/
+
+/* 3.3 Desktop
+------------------------
+*/
+
+
+@media (min-width: 992px) {
+	
+	.navbar-all {
+		max-width: 1140px;
+		margin: auto;
+		padding: 15px 0;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+	
+}
+
+
+
+/* =====================
+    4.0 Footer
+   ===================== */
+
+/* 4.1 General
+------------------------
+*/
+
+
+
+footer .first-footer {
+	display: none;
+}
+
+footer .second-footer{
+	padding: 20px;
+}
+
+footer .second-footer {
+	background-color: #373737;
+	color: #D9D9D9;
+}
+
+footer .social-icons {
+    width: 80%;
+    margin: 20px auto;
+    display: -webkit-box; 
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex; 
+	display: flex;
+    justify-content: center;
+
+}
+
+footer .social-icons li {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+footer .social-icons li i {
+	font-size: 18px;
+}
+
+footer .disclaimer {
+	display: block;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 300;
+}
+
+/* 4.2 Mobile
+------------------------
+*/
+
+/* 4.3 Desktop
+------------------------
+*/
+
+@media (min-width: 992px) {
+	
+	footer .first-footer {
+		display: block;
+		padding: 20px 0;
+		background-color: #373737;
+		color: #D9D9D9;
+	}
+
+	footer .first-footer .footer-menu {
+		text-align: center;
+	}
+
+	footer .first-footer .footer-menu li{
+	    padding: 0 20px;
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 12px;
+	}
+
+	footer .first-footer .footer-menu li:not(:last-of-type) {
+		border-right: 1px solid #D9D9D9;
+	}
+
+	footer .second-footer {
+		background-color: #fff;
+		padding: 0;
+	}
+
+	footer .social-icons {
+		color: #24659E;
+	}
+
+	footer .disclaimer {
+		font-size: 11px;
+	}
+
+}
+
+/* =====================
+    5.0 Cover
+   ===================== */
+
+/* 5.1 All
+------------------------
+*/
+
+.cover {
+	max-width: 1140px;
+	margin: auto;
+	padding: 100px 0;
+	background:linear-gradient(0deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("http://placekitten.com/2040/1000");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: #fff;
+	text-align: center;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  	filter: grayscale(100%);
+}
+
+.cover .cover-next {
+	text-transform: uppercase;
+	font-size: 20px;
+	letter-spacing: 5px;
+	line-height: 30px;
+}
+
+.cover .cover-title {
+	width: 100%;
+	margin: 15px 0;
+	padding: 15px;
+	font-size: 35px;
+	border: 1px solid #fff;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+.cover .cover-venue,
+.cover .country {
+	font-size: 16px;
+	letter-spacing: 1px;	
+}
+
+.cover .cover-venue span:first-of-type {
+	padding-right: 8px;
+    margin-right: 5px;
+	border-right: 2px solid #fff;
+}
+
+.cover .country {
+	margin-top: 10px;
+}
+
+/* 5.2 Mobile
+------------------------
+*/
+
+@media (max-width: 991px) {
+	h1 {
+		display: none;
+	}
+}
+
+
+/* 5.3 Desktop
+------------------------
+*/
+
+@media (min-width: 992px) {
+
+	.cover {
+		padding: 50px 20px;
+	}
+
+
+	.cover .cover-next {
+		font-size: 14px;
+		font-weight: 300;
+	}
+
+	.cover .cover-title {
+		margin: 5px 0;
+		padding: 30px;
+	}
+
+	.cover-title .title-month {
+		display: block;
+	}
+	
+	.cover-title .title-date {
+		display: block;
+		font-weight: 500;
+	}
+
+	.cover .title-name {
+		margin-bottom: 15px;
+		font-size: 30px;
+		font-weight: 700;
+		text-transform: uppercase;
+		text-align: left;
+	}
+	
+	.cover .cover-venue,
+	.cover .cover-country {
+		font-size: 14px;
+		line-height: 14px;
+		text-align: left;
+		margin: 5px 0;
+	}
+
+	.cover .cover-country span {
+		padding-right: 8px;
+	    margin-right: 5px;
+		border-right: 2px solid #fff;
+	}	
+
+}
+
+/* =====================
+    6.0 Dates
+   ===================== */
+
+/* 6.1 Container and list
+------------------------
+*/
+
+
+.dates .concert-list {
+	margin: 15px 0; 
+}
+
+.dates-concert {
+	margin: 30px 0;
+}
+
+.dates .concert-list li{
+	margin: 15px 0;
+	padding: 0;
+}
+
+.dates .concert-list .date-grid {
+	display: grid;
+	grid-template-columns: 100px auto;
+	border: 2px solid #373737;
+}
+
+.dg-date {
+	display: -webkit-box; 
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex; 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #24659E;
+	color: #fff;
+  	border-right: 2px solid #373737;
+}
+
+.dg-date span {
+	display: block;
+	text-align: center;
+	padding: 2px 0;
+	font-size: 21px;
+	letter-spacing: 2px;
+}
+
+.dg-date .month {
+	text-transform: uppercase;
+}
+
+.dg-info-grid {
+	display: grid;
+}
+
+.dg-info-grid .dg-ig-title {
+	padding: 20px;
+	font-size: 23px;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-bottom: 2px solid #373737;
+	letter-spacing: 2px;
+}
+
+.dg-info-grid .dg-ig-venue {
+	padding: 20px;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+.dg-info-grid .dg-ig-venue .ig-city p{
+	display: inline-block;
+}
+
+.dg-info-grid .dg-ig-venue .ig-city p:first-of-type{
+	padding-right: 6px;
+    margin-right: 3px;
+	border-right: 1px solid #373737;
+}
+
+
+
+/* 6.2 Link & Paginator
+------------------------
+*/
+
+.next-concerts {
+	font-size: 16px;
+	color: #373737;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.dates .paginator {
+	font-size: 18px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.dates .paginator li {
+	display: inline-block;
+	padding: 0 20px;
+}
+
+/* 6.3 Desktop
+------------------------
+*/
+
+@media (min-width: 992px) {
+
+	.dates .container {
+		padding: 0;
+	}
+
+	.dates .concert-list {
+		margin: 15px -10px;
+	}
+
+	.dates .concert-list li {
+		padding: 0 10px;
+	}
+
+}
+
+
+
+/* =====================
+    6.0 News
+   ===================== */
+
+/* 7.1 Container and list
+------------------------
+*/
+
+.news {
+    margin: 20px 0;
+}
+
+.news-list .news-single {
+	margin: 25px 0;
+}
+
+.news-list .news-single .img-date {
+	display: block;
+	margin: 10px 0;
+	font-size: 12px;
+	color: #6E6E6E;
+}
+
+.news-list .news-single h3 {
+	margin: 10px 0;
+	font-size: 20px;
+	line-height: 22px;
+	font-weight: 500;
+}
+
+/* 7.2 Desktop
+------------------------
+*/
+
+@media (min-width: 992px) {
+
+	.news .news-container {
+		padding: 0;
+	}
+
+	.news-list .news-single h3 {
+		font-size: 18px;
+		font-weight: 400;
+	}
+
+}
