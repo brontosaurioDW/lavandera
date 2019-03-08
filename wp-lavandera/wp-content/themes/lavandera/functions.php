@@ -15,7 +15,7 @@
  *  Styles
  */
 function lavandera_styles() {
-	wp_enqueue_style( 'lavandera-fontawesome', get_theme_file_uri( '/assets/css/fontawesome/fontawesome-all.min.css' ) );
+	wp_enqueue_style( 'lavandera-fontawesome', get_theme_file_uri( '/assets/css/vendor/fontawesome/css/fontawesome-all.min.css' ) );
 	wp_enqueue_style( 'lavandera-bootstrap', get_theme_file_uri( '/assets/css/vendor/bootstrap/bootstrap.min.css' ) );
 	wp_enqueue_style( 'lavandera-style', get_theme_file_uri( '/assets/css/style.css' ) );
 }
@@ -26,7 +26,7 @@ add_action( 'wp_enqueue_scripts', 'lavandera_styles' );
  */
 function lavandera_scripts() {
 	wp_enqueue_script( 'lavandera-jquery', get_theme_file_uri( '/assets/js/vendor/jquery/jquery.min.js' ));
-	wp_enqueue_script( 'lavandera-bootstrap', get_theme_file_uri( '/assets/js/vendor/popper/popper.js' ));
+	wp_enqueue_script( 'lavandera-popper', get_theme_file_uri( '/assets/js/vendor/popper/popper.js' ));
 	wp_enqueue_script( 'lavandera-bootstrap', get_theme_file_uri( '/assets/js/vendor/bootstrap/bootstrap.min.js' ));
 	wp_enqueue_script( 'lavandera-js', get_theme_file_uri( '/assets/js/script.js' ));
 }
