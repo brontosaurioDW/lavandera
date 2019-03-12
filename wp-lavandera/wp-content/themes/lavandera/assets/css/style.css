@@ -9,24 +9,29 @@ Site: HL;
  * 2.0 - General
  	* 2.1 - Colors & Fonts guide
  	* 2.2 - Buttons
+ 		* 2.2.1 - Buttons Mobile
+ 		* 2.2.2 - Buttons Tablet
  	* 2.3 - Headers
  * 3.0 - Navbar
- 	* 3.1 - All
- 	* 3.2 - Mobile
+ 	* 3.1 - General
+ 	* 3.2 - Tablet
  	* 3.3 - Desktop
  * 4.0 - Footer
  	* 4.1 - General
- 	* 4.2 - Mobile
+ 	* 4.2 - Tablet
+ 	* 4.3 - Desktop
  * 5.0 - Cover
  	* 5.1 - General
+ 	* 5.2 - Tablet
+ 	* 5.3 - Desktop
  * 6.0 - Dates
  	* 6.1 - Container and list
- 	* 6.2 - Link
+ 	* 6.2 - Tablet
  	* 6.3 - Desktop
-
 * 7.0 - News
  	* 7.1 - Container and list 	
  	* 7.2 - Desktop
+ * 8.0 - Paginador
  */
 
 
@@ -91,6 +96,16 @@ html{
     2.0 General
    ===================== */
 
+body {
+	padding-top: 55px;
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		padding-top: 45px;
+	}
+}
+
 /* 2.1 Colors & Fonts guide
 ------------------------
 */
@@ -119,6 +134,73 @@ html{
 ------------------------
 */
 
+a,
+button {
+	outline: none!important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.cta-link {
+	font-size: 16px;
+	font-weight: 600;
+	color: #373737;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.cta-link:hover {
+	color: inherit;
+	text-decoration: none;
+} 
+
+/* 2.2.1 Buttons Mobile
+------------------------
+*/
+
+@media screen and (max-width: 767px) {
+	.cta-wrapper {
+		text-align: center;
+	}
+
+	.cta-link { 
+		font-weight: normal;
+	}	
+}
+
+/* 2.2.2 Buttons Tablet
+------------------------
+*/
+
+@media screen and (min-width: 768px) {
+
+	.cta-wrapper {
+		text-align: right;
+		position: relative;
+		margin: 0;
+	}
+
+	.cta-wrapper:before {
+		content: '';
+		display: block;
+		height: 1px;
+		background: #373737;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+	}
+
+	.cta-link {
+		background: #ffffff;
+	    position: relative;
+	    padding: 0 0 0 25px;
+	}
+}
+
+
 /* 2.3 Headers
 ------------------------
 */
@@ -127,6 +209,10 @@ h1 {
 	font-size: 25px;
 	text-transform: uppercase;
 	letter-spacing: 5px;
+}
+
+h1 a {
+	color: #373737;
 }
 
 h2 {
@@ -144,11 +230,30 @@ h2 {
 ------------------------
 */
 
-.navbar-all {
-	padding: 15px;
+header:not(.is-home) {
 	-webkit-box-shadow: 0px 1px 2px 0px rgba(194,194,194,0.5);
 	-moz-box-shadow: 0px 1px 2px 0px rgba(194,194,194,0.5);
 	box-shadow: 0px 1px 2px 0px rgba(194,194,194,0.5);
+}
+
+header {
+	transition: 0.3s;
+	position: fixed;	
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	background: white;
+}
+
+header.fixed {
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(194,194,194,0.5);
+	-moz-box-shadow: 0px 1px 2px 0px rgba(194,194,194,0.5);
+	box-shadow: 0px 1px 2px 0px rgba(194,194,194,0.5);
+}
+
+.navbar-all {
+	padding: 15px;
 }
 
 .navbar-all .icon{
@@ -186,16 +291,16 @@ h2 {
 	letter-spacing: 5px;
 }
 
-
 .social-icons li {
 	display: inline-block;
 	padding: 0 15px;
 	font-size: 25px;
 }
 
-/* 3.2 Mobile
+/* 3.2 Tablet
 ------------------------
 */
+
 
 /* 3.3 Desktop
 ------------------------
@@ -207,7 +312,7 @@ h2 {
 	.navbar-all {
 		max-width: 1140px;
 		margin: auto;
-		padding: 15px 0;
+		padding: 25px 0;
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
@@ -263,6 +368,7 @@ footer .social-icons li i {
 }
 
 footer .disclaimer {
+	color: #6E6E6E;
 	display: block;
 	margin-bottom: 20px;
 	text-align: center;
@@ -270,16 +376,22 @@ footer .disclaimer {
 	font-weight: 300;
 }
 
-/* 4.2 Mobile
+/* 4.2 tablet
 ------------------------
 */
+
+@media (min-width: 768px) {
+	footer {
+		margin-top: 100px;
+	}
+}
 
 /* 4.3 Desktop
 ------------------------
 */
 
 @media (min-width: 992px) {
-	
+		
 	footer .first-footer {
 		display: block;
 		padding: 20px 0;
@@ -341,17 +453,17 @@ footer .disclaimer {
 
 .cover .cover-next {
 	text-transform: uppercase;
-	font-size: 20px;
-	letter-spacing: 5px;
+	font-size: 17px;
+	letter-spacing: 3px;
 	line-height: 30px;
 }
 
 .cover .cover-title {
 	width: 100%;
-	margin: 15px 0;
-	padding: 15px;
+	margin: 20px 0;
+	padding: 20px 15px;
 	font-size: 35px;
-	border: 1px solid #fff;
+	border: 2px solid #fff;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 }
@@ -359,7 +471,8 @@ footer .disclaimer {
 .cover .cover-venue,
 .cover .country {
 	font-size: 16px;
-	letter-spacing: 1px;	
+	letter-spacing: 1px;
+	font-weight: 600;
 }
 
 .cover .cover-venue span:first-of-type {
@@ -372,13 +485,58 @@ footer .disclaimer {
 	margin-top: 10px;
 }
 
-/* 5.2 Mobile
+/* 5.2 Tablet
 ------------------------
 */
 
 @media (max-width: 991px) {
 	h1 {
 		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.cover .cover-next {
+	    font-size: 19px;
+	    letter-spacing: 3px;
+	    line-height: normal;
+	    font-weight: 200;
+	}
+
+	.cover .cover-title {
+		padding: 35px 15px;
+	    margin: 5px 0;
+	    line-height: 120%;
+	}
+
+	.cover .cover-title .title-month {
+		display: block;
+		font-size: 40px;
+	}
+
+	.cover .cover-title .title-date {
+		font-weight: 600;
+		font-size: 53px;
+	}
+
+	.cover .title-name {
+		font-weight: 900;
+		font-size: 30px;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		margin: 10px 0 15px;
+	}
+
+	.cover .title-name,
+	.cover .cover-venue,
+	.cover .cover-country {
+		text-align: left;
+	}
+
+	.cover .cover-venue,
+	.cover .cover-country {
+		font-weight: 500;
+		line-height: 130%;
 	}
 }
 
@@ -390,13 +548,14 @@ footer .disclaimer {
 @media (min-width: 992px) {
 
 	.cover {
-		padding: 50px 20px;
+		padding: 70px 20px;
 	}
 
-
 	.cover .cover-next {
-		font-size: 14px;
-		font-weight: 300;
+		font-size: 15px;
+		font-weight: 200;
+		letter-spacing: 4px;
+		margin-bottom: 10px;
 	}
 
 	.cover .cover-title {
@@ -412,28 +571,12 @@ footer .disclaimer {
 		display: block;
 		font-weight: 500;
 	}
-
-	.cover .title-name {
-		margin-bottom: 15px;
-		font-size: 30px;
-		font-weight: 700;
-		text-transform: uppercase;
-		text-align: left;
-	}
 	
 	.cover .cover-venue,
 	.cover .cover-country {
 		font-size: 14px;
-		line-height: 14px;
-		text-align: left;
-		margin: 5px 0;
+		line-height: 150%;
 	}
-
-	.cover .cover-country span {
-		padding-right: 8px;
-	    margin-right: 5px;
-		border-right: 2px solid #fff;
-	}	
 
 }
 
@@ -520,27 +663,19 @@ footer .disclaimer {
 }
 
 
-
-/* 6.2 Link & Paginator
+/* 6.2 Tablet
 ------------------------
 */
 
-.next-concerts {
-	font-size: 16px;
-	color: #373737;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-}
+@media (min-width: 768px) {
+	.dates .concert-list {
+	    margin: 15px -15px;
+	}
 
-.dates .paginator {
-	font-size: 18px;
-	font-weight: 500;
-	text-align: center;
-}
-
-.dates .paginator li {
-	display: inline-block;
-	padding: 0 20px;
+	.dates .concert-list li {
+	    margin: 15px 0;
+	    padding: 0 15px;
+	}
 }
 
 /* 6.3 Desktop
@@ -566,7 +701,7 @@ footer .disclaimer {
 
 
 /* =====================
-    6.0 News
+    7.0 News
    ===================== */
 
 /* 7.1 Container and list
@@ -578,7 +713,7 @@ footer .disclaimer {
 }
 
 .news-list .news-single {
-	margin: 25px 0;
+	margin: 0 0 20px 0;
 }
 
 .news-list .news-single .img-date {
@@ -610,4 +745,20 @@ footer .disclaimer {
 		font-weight: 400;
 	}
 
+}
+
+
+/* =====================
+    8.0 Paginador
+   ===================== */
+
+.paginator {
+	font-size: 18px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.paginator li {
+	display: inline-block;
+	padding: 0 20px;
 }

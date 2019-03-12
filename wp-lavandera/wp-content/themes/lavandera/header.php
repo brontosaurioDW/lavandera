@@ -22,15 +22,19 @@
 	</head>
 
 	<body <?php body_class(); ?>>
+		<header <?php if (is_front_page()) {?> class="is-home" <?php } ?> >
+			<div class="container-fluid">
+				<nav class="navbar navbar-all">
+					<h1 class="logo">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Horacio Lavandera</a>
+					</h1>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="icon bold black d-lg-none">HL</a>
+					<button class="navbar-toggler menu-toggler-closed" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" id="menu-toggler">
+					<i class="fas fa-bars black burgerx"></i>
+					</button>
+				</nav>
+			</div>
 
-		<header>
-			<nav class="navbar navbar-all">
-				<h1>Horacio Lavandera</h1>
-				<a href="#" class="icon bold black d-sm-none">HL</a>
-				<button class="navbar-toggler menu-toggler-closed" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" id="menu-toggler">
-				<i class="fas fa-bars black burgerx"></i>
-				</button>
-			</nav>
 			<div class="menu-mobile">
 				<div class="collapse" id="navbarToggleExternalContent">
 					<div class="">
@@ -88,3 +92,5 @@
 				</div>
 			</div>
 		</header>
+
+		<main class="main-content">

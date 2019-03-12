@@ -2,11 +2,13 @@
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /lavandera/wp-lavandera/
+RewriteBase /
+# RewriteBase /lavandera/wp-lavandera/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /lavandera/wp-lavandera/index.php [L]
+RewriteRule . /index.php [L]
+# RewriteRule . /lavandera/wp-lavandera/index.php [L]
 </IfModule>
 
 # END WordPress

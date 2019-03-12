@@ -9,7 +9,8 @@
  * @version 1.0
  */
 ?>
-
+		</main>
+		
 		<footer>
 			<div class="first-footer">
 				<div class="container">
