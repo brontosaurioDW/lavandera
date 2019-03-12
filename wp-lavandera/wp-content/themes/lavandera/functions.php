@@ -32,3 +32,13 @@ function lavandera_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'lavandera_scripts' );
 
+/*
+ *  Navbar
+ */
+ if(function_exists('register_nav_menu')){
+	 register_nav_menus(
+		array(
+			'navbar' => 'Menu'
+		)
+	);
+ }

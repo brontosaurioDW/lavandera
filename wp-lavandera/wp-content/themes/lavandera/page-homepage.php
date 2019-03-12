@@ -11,8 +11,6 @@
 ?>
 
 
-<?php get_header(); ?>
-
 <section class="cover">
 	<div class="cover-container">
 		<div class="container">
@@ -47,6 +45,42 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<ul class="concert-list row">
+					
+					<?php 
+						if ( have_posts() ) {
+							while ( have_posts() ) : the_post(); 
+								$type = get_post_type ( get_the_ID() );
+								if( $type == 'concierto'){
+					?>
+						<li class="col-sm-12 col-md-4">
+							<div class="date-grid">
+								<div class="dg-date">
+									<span class="day extra-bold">26</span>
+									<span class="month extra-bold">Abr</span>
+									<span class="year">2019</span>
+								</div>
+								<div class="dg-info-grid">
+									<div class="dg-ig-title">
+										<p class="ig-title"><?php the_title(); ?></p>
+									</div>
+									<div class="dg-ig-venue">
+										<div>
+											<p class="ig-venue">CSO Konser Salonu</p>
+										</div>
+										<div class="ig-city">
+											<p>Ankara</p>
+											<p>Turquía</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					<?php
+								}	
+							endwhile;
+						} // end if
+					?>
+					
 					<li class="col-sm-12 col-md-4">
 						<div class="date-grid">
 							<div class="dg-date">
@@ -261,5 +295,3 @@
 		</div>
 	</div>
 </section>
-
-<?php get_footer();
