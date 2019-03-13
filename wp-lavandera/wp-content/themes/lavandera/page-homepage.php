@@ -64,27 +64,29 @@
 						?>			
 
 							<li class="col-sm-12 col-md-6 col-lg-4">
-								<div class="date-grid">
-									<div class="dg-date">
-										<span class="day extra-bold"><?php echo get_field('fecha'); ?></span>
-										<!-- <span class="month extra-bold">Abr</span>
-										<span class="year">2019</span> -->
-									</div>
-									<div class="dg-info-grid">
-										<div class="dg-ig-title">
-											<p class="ig-title"><?php the_title(); ?></p>
+								<a href="#">
+									<div class="date-grid">
+										<div class="dg-date">
+											<span class="day extra-bold"><?php echo get_field('fecha'); ?></span>
+											<!-- <span class="month extra-bold">Abr</span>
+											<span class="year">2019</span> -->
 										</div>
-										<div class="dg-ig-venue">
-											<div>
-												<p class="ig-venue"><?php echo get_field('lugar'); ?></p>
+										<div class="dg-info-grid">
+											<div class="dg-ig-title">
+												<p class="ig-title"><?php the_title(); ?></p>
 											</div>
-											<div class="ig-city">
-												<p><?php echo get_field('ciudad'); ?></p>
-												<p><?php echo get_field('pais'); ?></p>
+											<div class="dg-ig-venue">
+												<div>
+													<p class="ig-venue"><?php echo get_field('lugar'); ?></p>
+												</div>
+												<div class="ig-city">
+													<p><?php echo get_field('ciudad'); ?></p>
+													<p><?php echo get_field('pais'); ?></p>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
+								</a>
 							</li>
 
 						<?php

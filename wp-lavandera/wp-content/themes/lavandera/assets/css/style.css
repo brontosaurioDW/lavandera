@@ -647,6 +647,10 @@ footer .disclaimer {
 	background: #ffffff;
 }
 
+.dates .concert-list a {
+	color: #373737;
+}
+
 .dates .concert-list .date-grid {
 	display: grid;
 	grid-template-columns: 100px auto;
