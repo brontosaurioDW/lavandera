@@ -309,6 +309,36 @@ header.fixed {
 	font-size: 25px;
 }
 
+.social-icons i {
+	color: #24659E;
+}
+
+.social-icons.vertical li {
+	display: block;
+	margin: 0 0 20px;
+	padding: 0;
+}
+
+.social-icons.vertical .icon-wrapper {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center
+}
+
+.social-icons.vertical span + span {
+	color: #373737;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.social-icons.vertical i {
+	font-size: 17px;
+}
+
 /* 3.2 Tablet
 ------------------------
 */
@@ -866,3 +896,17 @@ footer .disclaimer {
     10.0 Contact
    ===================== */
 
+.contact h2 {
+	margin-bottom: 45px;
+}
+
+.contact p {
+	font-size: 13px;
+	line-height: 26px;
+	margin: 1rem 0 2rem;
+	letter-spacing: 1px;
+}
+
+.contact p:first-of-type {
+	margin-top: 0;
+}
