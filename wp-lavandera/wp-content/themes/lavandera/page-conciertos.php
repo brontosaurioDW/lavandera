@@ -37,6 +37,10 @@
 											<p>Ankara</p>
 											<p>Turquía</p>
 										</div>
+										<a href="#" class="cta-link">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -60,6 +64,10 @@
 											<p>Ankara</p>
 											<p>Turquía</p>
 										</div>
+										<a href="#" class="cta-link">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -83,6 +91,10 @@
 											<p>Ankara</p>
 											<p>Turquía</p>
 										</div>
+										<a href="#" class="cta-link">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -106,6 +118,10 @@
 											<p>Ankara</p>
 											<p>Turquía</p>
 										</div>
+										<a href="#" class="cta-link">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -129,6 +145,10 @@
 											<p>Ankara</p>
 											<p>Turquía</p>
 										</div>
+										<a href="#" class="cta-link">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -152,6 +172,10 @@
 											<p>Ankara</p>
 											<p>Turquía</p>
 										</div>
+										<a href="#" class="cta-link">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -175,6 +199,10 @@
 											<p>Ankara</p>
 											<p>Turquía</p>
 										</div>
+										<a href="#" class="cta-link">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -198,6 +226,10 @@
 											<p>Ankara</p>
 											<p>Turquía</p>
 										</div>
+										<a href="#" class="cta-link">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -221,6 +253,10 @@
 											<p>Ankara</p>
 											<p>Turquía</p>
 										</div>
+										<a href="#" class="cta-link">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
 								</div>
 							</div>

@@ -29,9 +29,29 @@
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Horacio Lavandera</a>
 					</h1>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="icon bold black d-lg-none">HL</a>
-					<button class="navbar-toggler menu-toggler-closed" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" id="menu-toggler">
-					<i class="fas fa-bars black burgerx"></i>
-					</button>
+					
+					<div class="menu-right">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="drop-language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="flag flag-spain"></i>
+								<span>ESP</span>
+							</button>
+							<div class="dropdown-menu" aria-labelledby="drop-language">
+								<a class="dropdown-item" href="#">
+									<i class="flag flag-usa"></i>
+									<span>ENG</span>
+								</a>
+							</div>
+						</div>
+
+						<button type="button">
+							<i class="fas fa-search"></i>
+						</button>
+						
+						<button class="navbar-toggler menu-toggler-closed" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" id="menu-toggler">
+							<i class="fas fa-bars black burgerx"></i>
+						</button>
+					</div>
 				</nav>
 			</div>
 

@@ -231,7 +231,7 @@
 
 			<div class="cta-wrapper">
 				<a href="#" class="cta-link">
-					Ver todos los conciertos 
+					<span>Ver todos los conciertos </span>
 					<i class="fal fa-long-arrow-right"></i>
 				</a>
 			</div>
@@ -306,7 +306,7 @@
 
 			<div class="cta-wrapper">
 				<a href="#" class="cta-link">
-					Ver todas las noticias
+					<span>Ver todas las noticias</span>
 					<i class="fal fa-long-arrow-right"></i>
 				</a>
 			</div>

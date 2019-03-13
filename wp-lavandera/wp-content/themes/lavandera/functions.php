@@ -15,9 +15,10 @@
  *  Styles
  */
 function lavandera_styles() {
-	wp_enqueue_style( 'lavandera-fontawesome', get_theme_file_uri( '/assets/css/vendor/fontawesome/css/fontawesome.css' ) );
-	wp_enqueue_style( 'lavandera-bootstrap', get_theme_file_uri( '/assets/css/vendor/bootstrap/bootstrap.min.css' ) );
-	wp_enqueue_style( 'lavandera-style', get_theme_file_uri( '/assets/css/style.css' ) );
+	$rand = rand( 1, 99999999999 );
+	wp_enqueue_style( 'lavandera-fontawesome', get_theme_file_uri( '/assets/css/vendor/fontawesome/css/all.min.css' ), '', $rand );
+	wp_enqueue_style( 'lavandera-bootstrap', get_theme_file_uri( '/assets/css/vendor/bootstrap/bootstrap.min.css' ), '', $rand );
+	wp_enqueue_style( 'lavandera-style', get_theme_file_uri( '/assets/css/style.css' ), '', $rand );
 }
 add_action( 'wp_enqueue_scripts', 'lavandera_styles' );
 
