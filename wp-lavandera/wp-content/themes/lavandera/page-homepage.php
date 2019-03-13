@@ -51,19 +51,24 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<ul class="concert-list row">
-						
-						<?php 
-							if ( have_posts() ) {
-								while ( have_posts() ) : the_post(); 
-									$type = get_post_type ( get_the_ID() );
-									if( $type == 'concierto'){
-						?>
+
+						<?php
+							// Get the 'Profiles' post type
+							$args = array(
+							    'post_type' => 'eventos',
+							);
+
+							$loop = new WP_Query($args);
+
+							while($loop->have_posts()): $loop->the_post();
+						?>			
+
 							<li class="col-sm-12 col-md-6 col-lg-4">
 								<div class="date-grid">
 									<div class="dg-date">
-										<span class="day extra-bold">26</span>
-										<span class="month extra-bold">Abr</span>
-										<span class="year">2019</span>
+										<span class="day extra-bold"><?php echo get_field('fecha'); ?></span>
+										<!-- <span class="month extra-bold">Abr</span>
+										<span class="year">2019</span> -->
 									</div>
 									<div class="dg-info-grid">
 										<div class="dg-ig-title">
@@ -71,23 +76,23 @@
 										</div>
 										<div class="dg-ig-venue">
 											<div>
-												<p class="ig-venue">CSO Konser Salonu</p>
+												<p class="ig-venue"><?php echo get_field('lugar'); ?></p>
 											</div>
 											<div class="ig-city">
-												<p>Ankara</p>
-												<p>Turquía</p>
+												<p><?php echo get_field('ciudad'); ?></p>
+												<p><?php echo get_field('pais'); ?></p>
 											</div>
 										</div>
 									</div>
 								</div>
 							</li>
+
 						<?php
-									}	
-								endwhile;
-							} // end if
+							endwhile;
+							wp_reset_query();
 						?>
-						
-						<li class="col-sm-12 col-md-6 col-lg-4">
+
+						<!-- <li class="col-sm-12 col-md-6 col-lg-4">
 							<div class="date-grid">
 								<div class="dg-date">
 									<span class="day extra-bold">26</span>
@@ -201,30 +206,7 @@
 									</div>
 								</div>
 							</div>
-						</li>
-						<li class="col-sm-12 col-md-6 col-lg-4">
-							<div class="date-grid">
-								<div class="dg-date">
-									<span class="day extra-bold">26</span>
-									<span class="month extra-bold">Abr</span>
-									<span class="year">2019</span>
-								</div>
-								<div class="dg-info-grid">
-									<div class="dg-ig-title">
-										<p class="ig-title">Ankara Piyano Festivali</p>
-									</div>
-									<div class="dg-ig-venue">
-										<div>
-											<p class="ig-venue">CSO Konser Salonu</p>
-										</div>
-										<div class="ig-city">
-											<p>Ankara</p>
-											<p>Turquía</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>

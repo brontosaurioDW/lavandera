@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Conciertos
+ * Template Name: Eventos
  * @link https://codex.wordpress.org/Template_Hierarchy
  * 
  * @package WordPress
