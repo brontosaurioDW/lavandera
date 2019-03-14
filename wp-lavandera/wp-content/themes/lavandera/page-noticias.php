@@ -18,6 +18,49 @@
 					<div class="col-sm-12">
 						<h2>Últimas noticias</h2>
 						<ul class="news-list row">
+							<?php
+								// Get the 'Profiles' post type
+								$args = array(
+									'post_type' => 'notas',
+								);
+
+								$loop = new WP_Query($args);
+
+								while($loop->have_posts()): $loop->the_post();
+							?>	
+								<li class="news-single col-sm-12 col-md-6 col-lg-4">
+									<a href="#">
+										<?php 
+											$image = get_field('foto');
+											$size = 'full'; // (thumbnail, medium, large, full or custom size)
+
+											if( $image ) {
+
+												echo wp_get_attachment_image( $image, $size);
+
+											}else{
+												
+												echo '<img src="https://placekitten.com/600/400" alt="image description">';
+											}
+											
+										?>	
+										<!--<img src="https://placekitten.com/600/400" alt="image description">-->
+										<span class="img-date"><?php the_date(); ?></span>
+										<!--<span class="img-date">27 de Enero de 2019</span>-->
+										<h3><?php the_title(); ?></h3>
+									</a>
+								</li>
+							<?php
+								endwhile;
+								wp_reset_query();
+							?>	
+							<!--<li class="news-single col-sm-12 col-md-6 col-lg-4">
+								<div>
+									<img src="https://placekitten.com/1200/800" alt="image description">
+									<span class="img-date">26 de Enero de 2019</span>
+									<h3>Horacio Lavandera y su exquisita versión del Himno Nacional Argentino</h3>
+								</div>
+							</li>
 							<li class="news-single col-sm-12 col-md-6 col-lg-4">
 								<div>
 									<img src="https://placekitten.com/600/400" alt="image description">
@@ -59,21 +102,7 @@
 									<span class="img-date">26 de Enero de 2019</span>
 									<h3>Horacio Lavandera y su exquisita versión del Himno Nacional Argentino</h3>
 								</div>
-							</li>
-							<li class="news-single col-sm-12 col-md-6 col-lg-4">
-								<div>
-									<img src="https://placekitten.com/600/400" alt="image description">
-									<span class="img-date">27 de Enero de 2019</span>
-									<h3>Horacio Lavandera con Infobae: "Focalizar el cuerpo y el alma en lo que uno más ama, requiere de sacrificios"</h3>
-								</div>
-							</li>
-							<li class="news-single col-sm-12 col-md-6 col-lg-4">
-								<div>
-									<img src="https://placekitten.com/1200/800" alt="image description">
-									<span class="img-date">26 de Enero de 2019</span>
-									<h3>Horacio Lavandera y su exquisita versión del Himno Nacional Argentino</h3>
-								</div>
-							</li>
+							</li>-->
 						</ul>
 					</div>
 					<div class="col-sm-3">
