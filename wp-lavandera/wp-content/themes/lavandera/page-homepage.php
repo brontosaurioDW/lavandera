@@ -61,10 +61,12 @@
 							$loop = new WP_Query($args);
 
 							while($loop->have_posts()): $loop->the_post();
+
+							
 						?>			
 
 							<li class="col-sm-12 col-md-6 col-lg-4">
-								<a href="#">
+								<a href="<?php the_permalink($post->ID); ?>">
 									<div class="date-grid">
 										<div class="dg-date">
 											<span class="day extra-bold"><?php echo get_field('fecha'); ?></span>
@@ -98,7 +100,7 @@
 			</div>
 
 			<div class="cta-wrapper">
-				<a href="#" class="cta-link">
+				<a href="/index.php?page_id=19" class="cta-link">
 					<span>Ver todos los conciertos </span>
 					<i class="fal fa-long-arrow-right"></i>
 				</a>

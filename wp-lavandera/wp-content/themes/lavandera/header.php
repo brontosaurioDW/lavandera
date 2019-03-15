@@ -59,7 +59,14 @@
 				<div class="collapse" id="navbarToggleExternalContent">
 					<div class="">
 						<ul class="menu-mobile-list">
-							<li>
+							<?php 
+								wp_nav_menu([
+									"menu" => "menu-principal", 
+									"container" => "li"
+								]); 
+							?>
+
+							<!--<li>
 								<a href="#">Inicio</a>
 							</li>
 							<li>
@@ -79,7 +86,7 @@
 							</li>
 							<li>
 								<a href="#">Contacto</a>
-							</li>
+							</li>-->
 							<li>
 								<a href="#">Esp</a>
 							</li>
