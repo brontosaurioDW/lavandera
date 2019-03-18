@@ -56,22 +56,28 @@
 							// Get the 'Profiles' post type
 							$args = array(
 							    'post_type' => 'eventos',
+								'posts_per_page'=> '6',
+								'meta_key' => 'fecha',
+								'orderby'   => 'meta_value',
+								'order' => 'ASC',
 							);
 
 							$loop = new WP_Query($args);
 
 							while($loop->have_posts()): $loop->the_post();
-
 							
+								// Para formatear-subdividir la fecha
+								$fecha = get_field('fecha', false, false); //fecha en bruto
+								$fecha = new DateTime($fecha); //objeto fecha
 						?>			
 
 							<li class="col-sm-12 col-md-6 col-lg-4">
 								<a href="<?php the_permalink($post->ID); ?>">
 									<div class="date-grid">
 										<div class="dg-date">
-											<span class="day extra-bold"><?php echo get_field('fecha'); ?></span>
-											<!-- <span class="month extra-bold">Abr</span>
-											<span class="year">2019</span> -->
+											<span class="day extra-bold"><?php echo $fecha->format('j'); ?></span>
+											<span class="month extra-bold"><?php echo $fecha->format('M'); ?></span>
+											<span class="year"><?php echo $fecha->format('Y'); ?></span>
 										</div>
 										<div class="dg-info-grid">
 											<div class="dg-ig-title">
