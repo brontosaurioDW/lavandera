@@ -34,12 +34,17 @@ Site: HL;
  * 8.0 - Paginador
  * 9.0 - Biography
  	* 9.1 - General
- 	* 9.2 - Tablet
-
+ 	* 9.2 - Desktop
  * 10.0 - Contact
  	* 10.1 - General
  	* 10.2 - Tablet
  	* 10.3 - Desktop
+ * 11.0 - Discografía
+ 	* 11.1 - General
+ 	* 11.2 - Desktop
+ * 12.0 - Media
+	* 12.1 - General
+	* 12.2 - Desktop
  */
 
 
@@ -307,10 +312,6 @@ header.fixed {
 	display: inline-block;
 	padding: 0 15px;
 	font-size: 25px;
-}
-
-.social-icons i {
-	color: #24659E;
 }
 
 .social-icons.vertical li {
@@ -652,6 +653,7 @@ footer .disclaimer {
 }
 
 .dates .concert-list .date-grid {
+	display: -ms-grid;
 	display: grid;
 	grid-template-columns: 100px auto;
 	border: 2px solid #373737;
@@ -683,6 +685,7 @@ footer .disclaimer {
 }
 
 .dg-info-grid {
+	display: -ms-grid;
 	display: grid;
 }
 
@@ -828,6 +831,11 @@ footer .disclaimer {
     9.0 Biography
    ===================== */
 
+
+/* 9.1 General
+------------------------
+*/
+
 .hero-full {	
 	background-size: cover;
 	background-position: center center;
@@ -871,7 +879,7 @@ footer .disclaimer {
 	margin: 1.5rem 0 1rem;
 }
 
-/* 9.2 Tablet
+/* 9.2 Desktop
 ------------------------
 */
 
@@ -913,4 +921,240 @@ footer .disclaimer {
 
 .contact p:first-of-type {
 	margin-top: 0;
+}
+
+/* =====================
+    11.0 Discografia
+   ===================== */
+
+/* 11.1 General
+------------------------
+*/
+
+.disc-list {
+	margin-top: 20px;
+}
+
+.disc-list > li {
+	border-bottom: 1px solid #D9D9D9;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.disc-list .disc-info-wrapper {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 130px auto;
+	grid-template-columns: 130px auto;
+}
+
+.disc-img {
+	width: 130px;
+	height: 130px;
+	overflow: hidden;
+}
+
+.disc-img img {
+	width: auto;
+	height: 100%;
+	object-fit: cover;
+	max-width: unset;
+}
+
+.disc-info {
+	padding-left: 20px;
+}
+
+.disc-info .disc-title {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 130%;
+	margin-top: -5px;
+}
+
+.disc-info .disc-subtitle {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.disc-info .share {
+	margin-top: 10px;
+}
+
+.disc-info .share,
+.disc-info .share ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.disc-info .share a {
+	font-size: 16px;
+	color: #373737;
+}
+
+.disc-info .share li {
+	padding: 0 23px 0 0;
+	display: inline-block;
+    font-size: 25px;
+}
+
+.disc-info-detail {
+	display: none;
+}
+
+.disc-info-detail a {
+	display: block;
+    text-align: center;
+    font-size: 21px;
+    color: #333333;
+    margin: 25px 0 0;
+}
+
+.song-list {
+    margin-top: 20px;
+}
+
+.song-list li {
+	padding:  12px 0;
+	font-size: 15px;
+	line-height: normal;
+	border-bottom: 1px solid #D9D9D9;
+}
+
+.song-list li:last-child {
+	border: none;
+}
+
+.disc-big .disc-img {
+	width: 100%;
+	height: auto;
+}
+
+.disc-big img {
+	height: auto;
+	width: 100%;
+}
+
+/* 11.2 Desktop
+------------------------
+*/
+
+@media screen and (min-width: 992px) {
+	.disc-list > li {
+		border: 0;
+	}
+
+	.disc-info .share {
+		border-top: 1px solid #ddd;
+		margin-top: 1rem;
+		padding-top: 1rem;
+	}
+
+	.disc-info .share > div {
+		margin-right: 1rem;
+	}
+
+	.disc-info .share h4 {
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 500;
+		margin-bottom: 5px;
+	}
+
+	.disc-big .disc-title {
+	    font-size: 25px;
+	    font-weight: bold;
+	    line-height: 110%;
+	    text-transform: uppercase;
+	}
+
+	.disc-big .disc-subtitle {
+		font-size: 16px;
+		margin: 1rem 0 2rem;
+		display: block;
+		font-weight: 500;
+	}
+
+	.disc-big .share {
+		margin-top: 10px;
+	}
+
+	.disc-big .share,
+	.disc-big .share ul {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+
+	.disc-big .share a {
+		font-size: 16px;
+		color: #373737;
+	}
+
+	.disc-big .share li {
+		padding: 0 23px 0 0;
+		display: inline-block;
+	    font-size: 25px;
+	}
+}
+
+/* =====================
+    12.0 Media
+   ===================== */
+
+  /* 12.1 General
+  ------------------------
+  */
+
+.nav-tabs {
+  border-bottom: 0;
+  margin-top: 1rem;
+}
+
+.nav-tabs .nav-link {
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #333;
+	width: auto;
+	padding: 0;
+	text-align: left;
+	border: 0;
+}
+
+.nav-tabs .nav-link i {
+	margin-left: 10px;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active i {
+	font-weight: 600;
+}
+
+.nav-tabs .nav-item.show .nav-link, 
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:focus, 
+.nav-tabs .nav-link:hover  {
+	border: 0;
+}
+
+.media-list {
+	margin-top: 2rem;
+}
+
+.media-list .img-wrapper {
+    height: 130px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.media-list .img-wrapper img {
+    object-fit: cover;
 }
