@@ -139,7 +139,6 @@
 							// Para formatear-subdividir la fecha
 							$fecha = get_field('fecha', false, false); //fecha en bruto
 							$fecha = new DateTime($fecha); //objeto fecha
-							$idDelLoop = get_the_ID();
 					?>						
 						<li class="col-md-12 col-md-6 col-lg-4">
 							<div class="date-grid">
