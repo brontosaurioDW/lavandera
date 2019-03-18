@@ -173,6 +173,12 @@ a:hover {
 	text-decoration: none;
 } 
 
+.cta-link.disabled {
+	opacity: 0.8;
+	text-decoration: line-through;
+	pointer-events: none;
+}
+
 /* 2.2.1 Buttons Mobile
 ------------------------
 */
@@ -181,10 +187,6 @@ a:hover {
 	.cta-wrapper {
 		text-align: center;
 	}
-
-	.cta-link { 
-		font-weight: normal;
-	}	
 }
 
 /* 2.2.2 Buttons Tablet
@@ -536,7 +538,7 @@ footer .disclaimer {
 	max-width: 1140px;
 	margin: auto;
 	padding: 100px 0;
-	background:linear-gradient(0deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("http://placekitten.com/2040/1000");
+	background:linear-gradient(0deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6));
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -693,7 +695,7 @@ footer .disclaimer {
 }
 
 .dates .concert-list li{
-	margin: 15px 0;
+	margin: 15px 0 0 0;
 	padding: 0;
 	background: #ffffff;
 }
@@ -703,10 +705,10 @@ footer .disclaimer {
 }
 
 .dates .concert-list .date-grid {
-	display: -ms-grid;
-	display: grid;
-	grid-template-columns: 100px auto;
-	border: 2px solid #373737;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	border: 3px solid #373737;
 }
 
 .dg-date {
@@ -720,6 +722,7 @@ footer .disclaimer {
 	background-color: #24659E;
 	color: #fff;
   	border-right: 2px solid #373737;
+  	width: 25%;
 }
 
 .dg-date span {
@@ -735,8 +738,7 @@ footer .disclaimer {
 }
 
 .dg-info-grid {
-	display: -ms-grid;
-	display: grid;
+	width: 75%;
 }
 
 .dg-info-grid .dg-ig-title {
@@ -746,12 +748,15 @@ footer .disclaimer {
 	text-transform: uppercase;
 	border-bottom: 2px solid #373737;
 	letter-spacing: 2px;
+	min-height: 85px;
+	word-break: break-word;
 }
 
 .dg-info-grid .dg-ig-venue {
 	padding: 20px;
 	font-size: 14px;
 	letter-spacing: 1px;
+	line-height: 140%;
 }
 
 .dg-info-grid .dg-ig-venue .ig-city p{
@@ -770,7 +775,113 @@ footer .disclaimer {
 	display: inline-block;
 }
 
+.dates .concert-list .dg-data {
+	padding: 15px;
+}
 
+.dates .concert-list .dg-data li {
+	margin: 0 0 13px 0;
+	font-size: 12px;
+	padding: 0;
+}
+
+.dates .concert-list .dg-data li:last-of-type {
+	margin: 0;
+}
+
+.dates .concert-list .dg-data span {
+	text-transform: uppercase;
+}
+
+.dg-share {
+    border-top: 2px solid #373737;
+    border-bottom: 2px solid #373737;
+    padding: 15px;
+}
+
+.dates .concert-list .dg-share h4 {
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+.dates .concert-list .dg-share li {
+    padding: 0 18px 0 0;
+    display: inline-block;
+    font-size: 25px;
+    margin: 0;
+}
+
+.dates .concert-list .dg-share li a {
+    font-size: 16px;
+    color: #373737;
+}
+
+.dg-tickets {
+	padding: 15px;
+}
+
+.dg-tickets a {
+	padding: 0;
+}
+
+.white .dg-date {
+	background: white;
+}
+
+.white .dg-date span {
+	color: #333;
+}
+
+.concert-detail .event-img img {
+	width: 100%;
+	height: auto;
+}
+
+.concert-detail .programm {
+	font-size:  14px;
+	line-height: 150%;
+}
+
+.concert-detail .programm  h2 {
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.concert-detail .programm  h3 {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.concert-detail .programm ul {
+	margin: 20px 0;
+	padding-left: 15px;
+}
+
+.concert-detail .programm li {
+	list-style: disc;
+	margin: 5px 0;
+}
+
+.concert-detail .programm p {
+	margin: 15px 0;
+}
+
+.related-concerts {
+    border-top: 1px solid #ddd;
+    margin-top: 35px;
+    padding-top: 25px;
+}
+
+.related-concerts h3 {
+	font-weight: bold;
+	font-size: 22px;
+	letter-spacing: 1px;
+	margin: 0;
+}
 
 /* 6.2 Tablet
 ------------------------
@@ -782,7 +893,7 @@ footer .disclaimer {
 	}
 
 	.dates .concert-list li {
-	    margin: 15px 0;
+	    margin: 15px 0 0;
 	    padding: 0 15px;
 	}
 }
@@ -803,6 +914,14 @@ footer .disclaimer {
 
 	.dates .concert-list li {
 		padding: 0 10px;
+	}
+
+	.concert-detail .programm {
+		padding-left: 5%;
+	}
+
+	.concert-detail .programm h2:first-of-type {
+		margin-top: 0;
 	}
 
 }

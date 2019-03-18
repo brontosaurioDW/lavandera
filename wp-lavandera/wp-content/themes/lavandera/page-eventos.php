@@ -48,7 +48,11 @@
 								</div>
 								<div class="dg-info-grid">
 									<div class="dg-ig-title">
-										<p class="ig-title"><?php the_title(); ?></p>
+										<p class="ig-title">
+											<a href="<?php echo get_permalink(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</p>
 									</div>
 									<div class="dg-ig-venue">
 										<div>

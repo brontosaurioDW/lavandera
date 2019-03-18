@@ -34,7 +34,7 @@
 								
 							?>	
 								<li class="news-single col-sm-12 col-md-6 col-lg-4">
-									<a href="#">
+									<a href="<?php the_permalink($post->ID); ?>">
 										<?php 
 											$image = get_field('foto');
 											$size = 'full'; // (thumbnail, medium, large, full or custom size)
