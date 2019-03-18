@@ -536,7 +536,7 @@ footer .disclaimer {
 	max-width: 1140px;
 	margin: auto;
 	padding: 100px 0;
-	background:linear-gradient(0deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("http://placekitten.com/2040/1000");
+	background:linear-gradient(0deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6));
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -752,6 +752,7 @@ footer .disclaimer {
 	padding: 20px;
 	font-size: 14px;
 	letter-spacing: 1px;
+	line-height: 140%;
 }
 
 .dg-info-grid .dg-ig-venue .ig-city p{
