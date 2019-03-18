@@ -1127,6 +1127,10 @@ footer .disclaimer {
 	padding: 0;
 	text-align: left;
 	border: 0;
+	-webkit-box-flex: initial;
+	-ms-flex-positive: initial;
+	flex-grow: initial;
+	margin-right: 1.5rem;
 }
 
 .nav-tabs .nav-link i {
@@ -1149,12 +1153,80 @@ footer .disclaimer {
 	margin-top: 2rem;
 }
 
+.media-list li {
+	margin-bottom: 30px;
+}
+
 .media-list .img-wrapper {
-    height: 130px;
-    overflow: hidden;
-    margin-bottom: 30px;
+	display: block;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+	transition: .3s;
+	border: 4px solid transparent;
+	margin-bottom: 1rem;
+}
+
+.media-list .img-wrapper + h3, 
+.media-list .img-wrapper h3 {
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 140%;
+}
+
+.media-list .img-wrapper.active,
+.media-list .img-wrapper:hover {
+	border: 4px solid #24659E;
+}
+
+.media-list .img-wrapper.active:before,
+.media-list .img-wrapper:hover:before {
+	content: '';
+	background: rgba(36, 101, 158, 0.35);
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
 }
 
 .media-list .img-wrapper img {
+	width: 100%;
+    max-width: unset;
+    height: 100%;
     object-fit: cover;
+}
+
+.media-list .video-wrapper iframe {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    margin-bottom: 1rem;
+}
+
+.img-preview { 
+	margin-top: 2rem;
+}
+
+.img-preview img {
+	width: 100%;
+    height: auto;
+}
+
+.img-preview h3 {
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+/* 12.2 Desktop
+------------------------
+*/
+
+@media screen and (min-width: 992px) {
+	.media-list .img-wrapper {
+	    height: 130px;
+	    margin-bottom: 0;
+	}
 }
