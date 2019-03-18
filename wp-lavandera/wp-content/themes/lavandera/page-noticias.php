@@ -20,13 +20,18 @@
 						<ul class="news-list row">
 							<?php
 								// Get the 'Profiles' post type
+								$paginacion = (get_query_var('paged')) ? get_query_var('paged') : 1;
+								
 								$args = array(
 									'post_type' => 'notas',
+									'posts_per_page'=> '9',
+									'paged' => $paginacion,
 								);
 
 								$loop = new WP_Query($args);
 
 								while($loop->have_posts()): $loop->the_post();
+								
 							?>	
 								<li class="news-single col-sm-12 col-md-6 col-lg-4">
 									<a href="#">
@@ -45,14 +50,14 @@
 											
 										?>	
 										<!--<img src="https://placekitten.com/600/400" alt="image description">-->
-										<span class="img-date"><?php the_date(); ?></span>
+										<span class="img-date"><?php the_date('j \d\e F \d\e Y'); ?></span>
 										<!--<span class="img-date">27 de Enero de 2019</span>-->
 										<h3><?php the_title(); ?></h3>
 									</a>
 								</li>
 							<?php
 								endwhile;
-								wp_reset_query();
+								//wp_reset_query();
 							?>	
 							<!--<li class="news-single col-sm-12 col-md-6 col-lg-4">
 								<div>
@@ -105,7 +110,7 @@
 							</li>-->
 						</ul>
 					</div>
-					<div class="col-sm-3">
+					<!--<div class="col-sm-3">
 						<div class="paginator">
 							<span><i class="fal fa-long-arrow-left"></i></span>
 							<ul>
@@ -115,6 +120,25 @@
 								<li>4</li>
 							</ul>
 							<span><i class="fal fa-long-arrow-right"></i></span>
+						</div>
+					</div>-->
+					<div class="col-sm-3">
+						<div class="paginator">
+							<?php 	
+								$big = 999999999; // need an unlikely integer
+
+								echo paginate_links( array(
+									/*'base' 		=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+									'format' 	=> '?paged=%#%',*/
+									'current' 	=> max( 1, get_query_var('paged') ),
+									'total'		=> $loop->max_num_pages,
+									'prev_text'	=> __('<span><i class="fal fa-long-arrow-left"></i></span>'),
+									'next_text'	=> __('<span><i class="fal fa-long-arrow-right"></i></span>'),
+									'type'      => 'list',
+								) );
+								
+								wp_reset_query();
+							?>
 						</div>
 					</div>
 				</div>
