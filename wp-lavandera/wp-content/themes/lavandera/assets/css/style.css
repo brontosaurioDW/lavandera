@@ -340,6 +340,56 @@ header.fixed {
 	font-size: 17px;
 }
 
+.navbar .flag {
+	display: inline-block;
+	width: 14px;
+	height: 9px;	
+}
+
+.navbar .btn-secondary, 
+.navbar .btn-secondary:not(:disabled):not(.disabled).active, 
+.navbar .btn-secondary:not(:disabled):not(.disabled):active, 
+.navbar .show > .btn-secondary.dropdown-toggle {
+    color: #333;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 14px;
+    padding: 0;
+}
+
+.navbar .btn-secondary, 
+.navbar .btn-secondary:not(:disabled):not(.disabled).active:focus, 
+.navbar .btn-secondary:not(:disabled):not(.disabled):active:focus, 
+.navbar .show > .btn-secondary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.flag-spain {
+	background: url(../img/flag-esp.png) no-repeat 0 0 transparent;
+	background-size: cover;
+}
+
+.flag-usa {
+	background: url(../img/flag-eng.png) no-repeat 0 0 transparent;
+	background-size: cover;
+}
+
+.navbar .search {
+	margin: 0 1rem;
+	padding: 0 1rem;
+	background: none;
+	border: 0;
+	font-size: 18px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	cursor: pointer;
+}
+
+.language button span {
+	display: inline-block;
+	margin: 0 0.5rem;
+}
+
 /* 3.2 Tablet
 ------------------------
 */

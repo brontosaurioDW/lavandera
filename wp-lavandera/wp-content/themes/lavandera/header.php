@@ -30,11 +30,12 @@
 					</h1>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="icon bold black d-lg-none">HL</a>
 					
-					<div class="menu-right">
-						<div class="dropdown">
+					<div class="menu-right d-flex align-items-center">
+						<div class="dropdown language">
 							<button class="btn btn-secondary dropdown-toggle" type="button" id="drop-language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="flag flag-spain"></i>
 								<span>ESP</span>
+								<i class="fas fa-chevron-bottom"></i>
 							</button>
 							<div class="dropdown-menu" aria-labelledby="drop-language">
 								<a class="dropdown-item" href="#">
@@ -44,8 +45,8 @@
 							</div>
 						</div>
 
-						<button type="button">
-							<i class="fas fa-search"></i>
+						<button type="button" class="search">
+							<i class="far fa-search"></i>
 						</button>
 						
 						<button class="navbar-toggler menu-toggler-closed" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" id="menu-toggler">
