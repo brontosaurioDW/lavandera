@@ -131,7 +131,7 @@
 			</div>
 
 			<div class="cta-wrapper">
-				<a href="/index.php?page_id=19" class="cta-link">
+				<a href="<?=get_permalink( get_page_by_title('Eventos') ); ?>" class="cta-link">
 					<span>Ver todos los conciertos </span>
 					<i class="fal fa-long-arrow-right"></i>
 				</a>
@@ -184,7 +184,7 @@
 
 
 					<div class="cta-wrapper">
-						<a href="#" class="cta-link">
+						<a href="<?=get_permalink( get_page_by_title('Noticias') ); ?>" class="cta-link">
 							<span>Ver todas las noticias</span>
 							<i class="fal fa-long-arrow-right"></i>
 						</a>
