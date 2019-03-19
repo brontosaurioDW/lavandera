@@ -35,23 +35,16 @@
 						?>	
 							<li class="news-single col-sm-12 col-md-6 col-lg-4">
 								<a href="<?php the_permalink($post->ID); ?>">
-									<?php 
-										$image = get_field('foto');
-										$size = 'full'; // (thumbnail, medium, large, full or custom size)
+									<span class="img-wrapper">
+										<?php 
+											$image = get_field('foto');
+											$size = 'full'; // (thumbnail, medium, large, full or custom size)
+											echo wp_get_attachment_image( $image, $size);										
+										?>	
+									</span>
 
-										if( $image ) {
-
-											echo wp_get_attachment_image( $image, $size);
-
-										}else{
-											
-											echo '<img src="https://placekitten.com/600/400" alt="image description">';
-										}
-										
-									?>	
-									<!--<img src="https://placekitten.com/600/400" alt="image description">-->
 									<span class="img-date"><?php the_date('j \d\e F \d\e Y'); ?></span>
-									<!--<span class="img-date">27 de Enero de 2019</span>-->
+
 									<h3><?php the_title(); ?></h3>
 								</a>
 							</li>

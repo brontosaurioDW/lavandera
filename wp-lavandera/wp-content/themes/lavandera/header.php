@@ -45,9 +45,9 @@
 							</div>
 						</div>
 
-						<button type="button" class="search">
+						<!-- <button type="button" class="search">
 							<i class="far fa-search"></i>
-						</button>
+						</button> -->
 						
 						<button class="navbar-toggler menu-toggler-closed" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" id="menu-toggler">
 							<i class="fas fa-bars black burgerx"></i>
@@ -66,31 +66,7 @@
 									"container" => "li"
 								]); 
 							?>
-
-							<!--<li>
-								<a href="#">Inicio</a>
-							</li>
-							<li>
-								<a href="#">Biografía</a>
-							</li>
-							<li>
-								<a href="#">Conciertos</a>
-							</li>
-							<li>
-								<a href="#">Noticias</a>
-							</li>
-							<li>
-								<a href="#">Discrografía</a>
-							</li>
-							<li>
-								<a href="#">Media</a>
-							</li>
-							<li>
-								<a href="#">Contacto</a>
-							</li>-->
-							<li>
-								<a href="#">Esp</a>
-							</li>
+							
 							<li>
 								<ul class="social-icons">
 									<li>

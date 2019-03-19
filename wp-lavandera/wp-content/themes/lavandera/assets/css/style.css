@@ -500,11 +500,15 @@ footer .disclaimer {
 		text-align: center;
 	}
 
-	footer .first-footer .footer-menu li{
+	footer .first-footer .footer-menu li {
 	    padding: 0 20px;
 		display: inline-block;
 		text-transform: uppercase;
 		font-size: 12px;
+	}
+
+	footer .first-footer .footer-menu li a {
+	    color: #fff;
 	}
 
 	footer .first-footer .footer-menu li:not(:last-of-type) {
@@ -962,9 +966,10 @@ footer .disclaimer {
 }
 
 .news-list .news-single img {
-	width: 100%;
-	height: auto;
 	object-fit: cover;
+	max-width: none;
+	height: auto;
+	display: block;
 }
 
 .news-list .news-single .img-date {
@@ -983,6 +988,79 @@ footer .disclaimer {
 	color:  #373737;
 }
 
+.noticia-single .img-date {
+	font-size: 12px;
+	font-weight: normal;
+	display: block;
+	margin: 15px 0;
+}
+
+.noticia-single h2 {
+	text-transform: none;
+	font-size: 37px;
+	line-height: 110%;
+	margin-top: 0;
+}
+
+.noticia-single img {
+	width: 100%;
+	height: auto;
+}
+
+.noticia-single .share-title {
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+.noticia-single .share-list {
+	margin-top: 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.noticia-single .share-list li {
+	padding: 0 23px 0 0;
+	display: inline-block;
+    font-size: 25px;
+}
+
+.noticia-single .share-list a {
+	font-size: 16px;
+	color: #373737;
+}
+
+.noticia-content img {
+	margin: 20px 0;
+	display: block;
+}
+
+.noticia-content img:first-of-type {
+	margin-top: 0;
+}
+
+.noticia-content p {
+	margin: 20px 0;
+	font-size: 14px;
+	line-height: 160%;
+}
+
+.noticia-sub {
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 150%;
+}
+
+.sidebar h2 {
+	font-size: 16px;
+	text-transform: uppercase;
+	margin: 0 0 20px;
+}
+
 /* 7.2 Desktop
 ------------------------
 */
@@ -994,10 +1072,10 @@ footer .disclaimer {
 	}
 
 	.news-list .news-single h3 {
-		font-size: 18px;
-		font-weight: 400;
+		font-size: 16px;
+		font-weight: 500;
+		margin-top: 5px;
 	}
-
 }
 
 
@@ -1089,7 +1167,7 @@ footer .disclaimer {
 		background-attachment: fixed;
 	}
 
-	.biography .divisor {
+	.divisor {
 		height: 1px;
 		background: #D9D9D9;
 		display: block;

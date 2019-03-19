@@ -144,20 +144,8 @@
 			<div class="row">
 				<div class="col-sm-12 news-container">
 					<h2>Últimas noticias</h2>
+
 					<ul class="news-list row">
-						<?php 
-
-						$image = get_field('image');
-						$size = 'full'; // (thumbnail, medium, large, full or custom size)
-
-						if( $image ) {
-
-							echo wp_get_attachment_image( $image, $size );
-
-						}
-
-						?>
-						
 						<?php
 							// Get the 'Profiles' post type
 							$args = array(
@@ -178,14 +166,7 @@
 									<?php 
 										$image = get_field('foto');
 										$size = 'full'; // (thumbnail, medium, large, full or custom size)
-
-										if ( $image ) {
-
-											echo wp_get_attachment_image( $image, $size);
-
-										} else { 
-											echo "hola";
-										} 
+										echo wp_get_attachment_image( $image, $size);										
 									?>	
 								</span>
 

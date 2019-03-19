@@ -15,16 +15,13 @@
 			<div class="first-footer">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-12">
-							<ul class="footer-menu">
-								<li>Inicio</li>
-								<li>Biografía</li>
-								<li>Conciertos</li>
-								<li>Noticias</li>
-								<li>Discografía</li>
-								<li>Media</li>
-								<li>Contacto</li>
-							</ul>
+						<div class="col-sm-12 footer-menu">
+							<?php 
+								wp_nav_menu([
+									"menu" => "menu-principal", 
+									"container" => "li"
+								]); 
+							?>
 						</div>
 					</div>
 				</div>
