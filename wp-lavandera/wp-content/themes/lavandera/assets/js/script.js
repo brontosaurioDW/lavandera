@@ -29,7 +29,7 @@ $(window).scroll(function() {
 function Discografia() {
 	if ($(window).width() < 992) {
 		$('.js-show-disc').each(function(index, el) {
-			var discInfo 	= $(el).find('.disc-info-wrapper');
+			var discInfo 	= $(el).find('.disc-info-wrapper .disc-img');
 			var discSongs 	= $(el).find('.disc-info-detail');
 			var closeSongs 	= $(discSongs).find('.js-close-detail');
 
@@ -45,7 +45,7 @@ function Discografia() {
 		});
 	} else {
 		$('.js-show-disc').each(function(index, el) {
-			var discInfo 	= $(el).find('.disc-info-wrapper');
+			/*var discInfo 	= $(el).find('.disc-info-wrapper .disc-img');
 			var discSongs 	= $(el).find('.disc-info-detail');
 			var closeSongs 	= $(discSongs).find('.js-close-detail');
 
@@ -57,7 +57,7 @@ function Discografia() {
 			$(closeSongs).on('click',  function(event) {
 				event.preventDefault();
 				$(discSongs).slideUp(500);
-			});
+			});*/
 		});
 	}
 }

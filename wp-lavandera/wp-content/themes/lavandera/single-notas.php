@@ -17,7 +17,6 @@
 		<span class="img-date">
 			<?php 
 				$fecha_post = get_post();
-				//echo apply_filters( 'get_the_date', $fecha_post->post_date );
 				echo apply_filters( 'the_date', get_the_date(), get_option( 'date_format' ), '', '' );
 			?>
 		</span>

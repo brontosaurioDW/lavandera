@@ -743,7 +743,7 @@ footer .disclaimer {
 
 .dg-info-grid .dg-ig-title {
 	padding: 20px;
-	font-size: 22px;
+	font-size: 21px;
 	font-weight: 600;
 	text-transform: uppercase;
 	border-bottom: 2px solid #373737;
@@ -795,7 +795,6 @@ footer .disclaimer {
 
 .dg-share {
     border-top: 2px solid #373737;
-    border-bottom: 2px solid #373737;
     padding: 15px;
 }
 
@@ -820,6 +819,7 @@ footer .disclaimer {
 }
 
 .dg-tickets {
+	border-top: 2px solid #373737;
 	padding: 15px;
 }
 
@@ -835,9 +835,21 @@ footer .disclaimer {
 	color: #333;
 }
 
+.concert-detail .dates {
+	margin-top: 20px;
+}
+
+.concert-detail .event-img {
+	margin-bottom: 15px;
+}
+
 .concert-detail .event-img img {
 	width: 100%;
 	height: auto;
+}
+
+.concert-detail .dates .concert-list {
+	margin: 0 0 15px 0;
 }
 
 .concert-detail .programm {
@@ -917,13 +929,8 @@ footer .disclaimer {
 	}
 
 	.concert-detail .programm {
-		padding-left: 5%;
+		padding-left: 3%;
 	}
-
-	.concert-detail .programm h2:first-of-type {
-		margin-top: 0;
-	}
-
 }
 
 
@@ -948,11 +955,24 @@ footer .disclaimer {
 	margin: 15px 0 20px 0;
 }
 
+.news-list .news-single .img-wrapper {
+    display: block;
+    height: 195px;
+    overflow: hidden;
+}
+
+.news-list .news-single img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
 .news-list .news-single .img-date {
 	display: block;
-	margin: 10px 0;
+	margin: 15px 0 0;
 	font-size: 12px;
 	color: #6E6E6E;
+	min-height: 15px;
 }
 
 .news-list .news-single h3 {
@@ -960,6 +980,7 @@ footer .disclaimer {
 	font-size: 18px;
 	line-height: 22px;
 	font-weight: 600;
+	color:  #373737;
 }
 
 /* 7.2 Desktop
@@ -988,6 +1009,7 @@ footer .disclaimer {
 	font-size: 18px;
 	font-weight: 500;
 	text-align: center;
+	margin-top: 2rem;
 }
 
 .paginator li {
@@ -995,6 +1017,13 @@ footer .disclaimer {
 	padding: 0 20px;
 }
 
+.paginator li span {
+	font-weight: 600;
+}
+
+.paginator li a {
+	color:  #373737;
+}
 
 /* =====================
     9.0 Biography

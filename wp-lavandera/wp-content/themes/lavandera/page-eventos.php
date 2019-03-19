@@ -21,14 +21,17 @@
 						<?php
 							// Get the 'Profiles' post type
 							$paginacion = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+							$currentTime = current_time('j M Y');
 							
 							$args = array(
 							    'post_type' => 'eventos',
-								'posts_per_page'=> '3',
+							    'post_status' => 'publish',
+								'posts_per_page'=> '9',
 								'meta_key' => 'fecha', //para ordenar por fecha
 								'orderby'   => 'meta_value', //ordena por el valor del meta_key que indicamos
-								'order' => 'DESC',
-								'paged' => $paginacion,
+								'order' => 'ASC',
+								'paged' => $paginacion
 							);
 							
 							$loop = new WP_Query($args);
@@ -39,6 +42,7 @@
 								$fecha = get_field('fecha', false, false); //fecha en bruto
 								$fecha = new DateTime($fecha); //objeto fecha
 						?>	
+
 						<li class="col-sm-12 col-md-6 col-lg-4">
 							<div class="date-grid">
 								<div class="dg-date">
@@ -62,18 +66,21 @@
 											<p><?php echo get_field('ciudad'); ?></p>
 											<p><?php echo get_field('pais'); ?></p>
 										</div>
+
 										<?php 
 											$link_ticket = get_field('tickets');
 											
-											if ($link_ticket){
-												?>
-												<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link">
-													<span>Comprar tickets</span>
-													<i class="fal fa-long-arrow-right"></i>
-												</a>
-												<?php
-											};
+											if ($link_ticket){ 
+												$classDisabled = '';
+											} else {
+												$classDisabled = 'disabled';
+											}
 										?>
+
+										<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link <?php echo $classDisabled; ?>">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -86,20 +93,7 @@
 					</ul>
 				</div>
 				
-				<!--<div class="col-sm-3">
-					<div class="paginator">
-						<span><i class="fal fa-long-arrow-left"></i></span>
-						<ul>
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-							<li>4</li>
-						</ul>
-						<span><i class="fal fa-long-arrow-right"></i></span>
-					</div>
-				</div>-->
-				
-				<div class="col-sm-3">
+				<div class="col-sm-6">
 					<div class="paginator">
 						<?php 	
 							$big = 999999999; // need an unlikely integer

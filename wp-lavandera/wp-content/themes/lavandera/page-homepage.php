@@ -17,57 +17,57 @@
 		$image = get_field('imagen_evento_destacado');
 
 		if( !empty($image) ): ?>
-	<section class="cover" style="background-image: url(<?php echo $image['url']; ?>)">
-		<div class="cover-container">
-			<div class="container">
-				<div class="row">
-					<?php
-							// Get the 'Profiles' post type
-							$args = array(
-							    'post_type' => 'eventos',
-								'showposts'=> '1'
-							);
+		<section class="cover" style="background-image: url(<?php echo $image['url']; ?>)">
+			<div class="cover-container">
+				<div class="container">
+					<div class="row">
+						<?php
+								// Get the 'Profiles' post type
+								$args = array(
+								    'post_type' => 'eventos',
+									'showposts'=> '1'
+								);
 
-							$loop = new WP_Query($args);
+								$loop = new WP_Query($args);
 
-							while($loop->have_posts()): $loop->the_post();
-							
-								// Para formatear-subdividir la fecha
-								$fecha = get_field('fecha', false, false); //fecha en bruto
-								$fecha = new DateTime($fecha); //objeto fecha
+								while($loop->have_posts()): $loop->the_post();
+								
+									// Para formatear-subdividir la fecha
+									$fecha = get_field('fecha', false, false); //fecha en bruto
+									$fecha = new DateTime($fecha); //objeto fecha
+							?>
+						<!-- HERO block tablet / desktop -->
+						<div class="col-md-5 col-lg-4 col-xl-3 d-none d-md-block">
+							<p class="cover-next">Próximo concierto</p>
+							<p class="cover-title">
+								<span class="title-month"><?php echo $fecha->format('M'); ?></span>
+								<span class="title-date"><?php echo $fecha->format('j'); ?></span>
+							</p>
+							<p class="title-name"><?php the_title(); ?></p>
+							<p class="cover-venue"><?php echo get_field('lugar'); ?></p>
+							<p class="cover-country">
+								<span><?php echo get_field('ciudad'); ?></span> | <?php echo get_field('pais'); ?>
+							</p>
+						</div>
+
+						<!-- HERO block mobile -->
+						<div class="col-12 d-block d-md-none">
+							<p class="cover-next">Próximo concierto: <span class="semi-bold"><?php echo $fecha->format('M j'); ?></span></p>
+							<p class="cover-title extra-bold"><?php the_title(); ?></p>
+							<p class="cover-venue">
+								<span><?php echo get_field('lugar'); ?></span>
+								<span><?php echo get_field('ciudad'); ?></span>
+							</p>
+							<p class="country"><?php echo get_field('pais'); ?></p>
+						</div>
+						<?php
+							endwhile;
+							wp_reset_query();
 						?>
-					<!-- HERO block tablet / desktop -->
-					<div class="col-md-5 col-lg-4 col-xl-3 d-none d-md-block">
-						<p class="cover-next">Próximo concierto</p>
-						<p class="cover-title">
-							<span class="title-month"><?php echo $fecha->format('M'); ?></span>
-							<span class="title-date"><?php echo $fecha->format('j'); ?></span>
-						</p>
-						<p class="title-name"><?php the_title(); ?></p>
-						<p class="cover-venue"><?php echo get_field('lugar'); ?></p>
-						<p class="cover-country">
-							<span><?php echo get_field('ciudad'); ?></span> | <?php echo get_field('pais'); ?>
-						</p>
 					</div>
-
-					<!-- HERO block mobile -->
-					<div class="col-12 d-block d-md-none">
-						<p class="cover-next">Próximo concierto: <span class="semi-bold"><?php echo $fecha->format('M j'); ?></span></p>
-						<p class="cover-title extra-bold"><?php the_title(); ?></p>
-						<p class="cover-venue">
-							<span><?php echo get_field('lugar'); ?></span>
-							<span><?php echo get_field('ciudad'); ?></span>
-						</p>
-						<p class="country"><?php echo get_field('pais'); ?></p>
-					</div>
-					<?php
-						endwhile;
-						wp_reset_query();
-					?>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 	<?php endif; ?>
 
 	<section class="dates">
@@ -145,6 +145,19 @@
 				<div class="col-sm-12 news-container">
 					<h2>Últimas noticias</h2>
 					<ul class="news-list row">
+						<?php 
+
+						$image = get_field('image');
+						$size = 'full'; // (thumbnail, medium, large, full or custom size)
+
+						if( $image ) {
+
+							echo wp_get_attachment_image( $image, $size );
+
+						}
+
+						?>
+						
 						<?php
 							// Get the 'Profiles' post type
 							$args = array(
@@ -158,24 +171,26 @@
 
 							while($notas->have_posts()): $notas->the_post();
 						?>
+
 						<li class="news-single col-sm-12 col-md-6 col-lg-4">
 							<a href="<?php the_permalink($post->ID); ?>">
-								<?php 
-									$image = get_field('foto');
-									$size = 'full'; // (thumbnail, medium, large, full or custom size)
+								<span class="img-wrapper">
+									<?php 
+										$image = get_field('foto');
+										$size = 'full'; // (thumbnail, medium, large, full or custom size)
 
-									if( $image ) {
+										if ( $image ) {
 
-										echo wp_get_attachment_image( $image, $size);
+											echo wp_get_attachment_image( $image, $size);
 
-									}else{
-											
-										echo '<img src="https://placekitten.com/600/400" alt="image description">';
-									}										
-								?>	
-								<!--<img src="https://placekitten.com/600/400" alt="image description">-->
+										} else { 
+											echo "hola";
+										} 
+									?>	
+								</span>
+
 								<span class="img-date"><?php the_date('j \d\e F \d\e Y'); ?></span>
-								<!--<span class="img-date">27 de Enero de 2019</span>-->
+
 								<h3><?php the_title(); ?></h3>
 							</a>
 						</li>
@@ -185,14 +200,15 @@
 							wp_reset_query();
 						?>
 					</ul>
-				</div>
-			</div>
 
-			<div class="cta-wrapper">
-				<a href="#" class="cta-link">
-					<span>Ver todas las noticias</span>
-					<i class="fal fa-long-arrow-right"></i>
-				</a>
+
+					<div class="cta-wrapper">
+						<a href="#" class="cta-link">
+							<span>Ver todas las noticias</span>
+							<i class="fal fa-long-arrow-right"></i>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

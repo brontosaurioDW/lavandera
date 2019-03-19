@@ -22,17 +22,20 @@
 
 			<div class="row">
 				<div class="col-lg-4 dates">
-					<div class="event-img">
-						<?php 
-							$image = get_field('imagen_evento');
-							$size = 'full';
-							$class = 'img-fluid';
+					<?php  $image = get_field('imagen_evento'); ?>
 
-							if( $image ) {
-								echo wp_get_attachment_image( $image, $size);
-							}									
-						?>	
-					</div>
+					<?php if ($image) { ?>
+						<div class="event-img">
+							<?php 
+								$size = 'full';
+								$class = 'img-fluid';
+
+								if( $image ) {
+									echo wp_get_attachment_image( $image, $size);
+								}									
+							?>	
+						</div>
+					<?php  }  ?>
 
 					<?php						
 						// Para formatear-subdividir la fecha
@@ -90,20 +93,20 @@
 										</li>
 									</ul>
 								</div>
-								<div class="dg-tickets"> 
-									<?php 
-										$link_ticket = get_field('tickets');
-										
-										if ($link_ticket){
-											?>
-											<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link">
-												<span>Comprar tickets</span>
-												<i class="fal fa-long-arrow-right"></i>
-											</a>
-											<?php
-										};
-									?>
-								</div>
+							
+								<?php 
+									$link_ticket = get_field('tickets');
+									
+									if ($link_ticket){ 
+								?>
+									<div class="dg-tickets"> 
+										<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link">
+											<span>Comprar tickets</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
+									</div>
+								<?php } ?>
+								
 							</div>
 						</div>
 					</div>
