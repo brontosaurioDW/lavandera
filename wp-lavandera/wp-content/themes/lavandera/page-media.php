@@ -40,76 +40,58 @@
 							<div class="row">
 								<div class="col-lg-8">										
 									<ul class="media-list row">
-										<li class="col-md-6 col-lg-4 col-xl-3">
-											<a href="#" class="img-wrapper">
-												<img src="https://picsum.photos/200/300" alt="">
-											</a>
-											<h3 class="d-lg-none">Horacio Lavandera- Mozarteum Orchester Salzburg. Teatro Colón 2001</h3>
-										</li>
-										<li class="col-md-6 col-lg-4 col-xl-3">
-											<a href="#" class="img-wrapper">
-												<img src="https://picsum.photos/300/200" alt="">
-											</a>
-											<h3 class="d-lg-none">Horacio Lavandera- Mozarteum Orchester Salzburg. Teatro Colón 2001</h3>
-										</li>
-										<li class="col-md-6 col-lg-4 col-xl-3">
-											<a href="#" class="img-wrapper active">
-												<img src="https://picsum.photos/500/300" alt="">
-											</a>
-											<h3 class="d-lg-none">Horacio Lavandera- Mozarteum Orchester Salzburg. Teatro Colón 2001</h3>
-										</li>
-										<li class="col-md-6 col-lg-4 col-xl-3">
-											<a href="#" class="img-wrapper">
-												<img src="https://picsum.photos/250/350" alt="">
-											</a>
-											<h3 class="d-lg-none">Horacio Lavandera- Mozarteum Orchester Salzburg. Teatro Colón 2001</h3>
-										</li>
-										<li class="col-md-6 col-lg-4 col-xl-3">
-											<a href="#" class="img-wrapper">
-												<img src="https://picsum.photos/160/220" alt="">
-											</a>
-											<h3 class="d-lg-none">Horacio Lavandera- Mozarteum Orchester Salzburg. Teatro Colón 2001</h3>
-										</li>
-										<li class="col-md-6 col-lg-4 col-xl-3">
-											<a href="#" class="img-wrapper">
-												<img src="https://picsum.photos/200/300" alt="">
-											</a>
-											<h3 class="d-lg-none">Horacio Lavandera- Mozarteum Orchester Salzburg. Teatro Colón 2001</h3>
-										</li>
-										<li class="col-md-6 col-lg-4 col-xl-3">
-											<a href="#" class="img-wrapper">
-												<img src="https://picsum.photos/300/200" alt="">
-											</a>
-											<h3 class="d-lg-none">Horacio Lavandera- Mozarteum Orchester Salzburg. Teatro Colón 2001</h3>
-										</li>
-										<li class="col-md-6 col-lg-4 col-xl-3">
-											<a href="#" class="img-wrapper">
-												<img src="https://picsum.photos/500/300" alt="">
-											</a>
-										</li>
-										<li class="col-md-6 col-lg-4 col-xl-3">
-											<a href="#" class="img-wrapper">
-												<img src="https://picsum.photos/250/350" alt="">
-											</a>
-											<h3 class="d-lg-none">Horacio Lavandera- Mozarteum Orchester Salzburg. Teatro Colón 2001</h3>
-										</li>
-										<li class="col-md-6 col-lg-4 col-xl-3">
-											<a href="#" class="img-wrapper">
-												<img src="https://picsum.photos/160/220" alt="">
-											</a>
-											<h3 class="d-lg-none">Horacio Lavandera- Mozarteum Orchester Salzburg. Teatro Colón 2001</h3>
-										</li>
+										<?php
+											$paginacion = (get_query_var('paged')) ? get_query_var('paged') : 1;
+											
+											// Get the 'Profiles' post type
+											$args = array(
+												'post_type' => 'fotos',
+												'posts_per_page'=> '12',
+												'paged' => $paginacion,
+											);
+
+											$fotos = new WP_Query($args);
+
+											while($fotos->have_posts()): $fotos->the_post();
+										?>		
+											<li class="col-md-6 col-lg-4 col-xl-3">
+												<a href="#" class="img-wrapper">
+													<?php 
+
+													$image = get_field('foto');
+													$size = 'full'; // (thumbnail, medium, large, full or custom size)
+
+													if( $image ) {
+
+														echo wp_get_attachment_image( $image, $size );
+
+													}
+
+												?>
+												</a>
+												<h3 class="d-lg-none"><?php the_title(); ?></h3>
+											</li>
+										<?php
+											endwhile;
+										?>	
 									</ul>
 
 									<div class="paginator">
-										<span><i class="fal fa-long-arrow-left"></i></span>
-										<ul>
-											<li>1</li>
-											<li>2</li>
-											<li>3</li>
-											<li>4</li>
-										</ul>
-										<span><i class="fal fa-long-arrow-right"></i></span>
+										<?php 	
+											$big = 999999999; // need an unlikely integer
+
+											echo paginate_links( array(
+												'base' 		=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+												'format' 	=> '?paged=%#%',
+												'current' 	=> max( 1, get_query_var('paged') ),
+												'total'		=> $fotos->max_num_pages,
+												'prev_text'	=> __('<span><i class="fal fa-long-arrow-left"></i></span>'),
+												'next_text'	=> __('<span><i class="fal fa-long-arrow-right"></i></span>'),
+												'type'      => 'list',
+											) );
+											
+											wp_reset_query();
+										?>
 									</div>
 								</div>
 								<div class="col-lg-4 d-none d-lg-block">
@@ -125,7 +107,28 @@
 							<div class="row">
 								<div class="col-lg-12">	
 									<ul class="media-list row">
-										<li class="col-md-6">
+										<?php
+											$paginacion = (get_query_var('paged')) ? get_query_var('paged') : 1;
+											
+											// Get the 'Profiles' post type
+											$args = array(
+												'post_type' => 'videos',
+												'posts_per_page'=> '6',
+												'paged' => $paginacion,
+											);
+
+											$videos = new WP_Query($args);
+
+											while($videos->have_posts()): $videos->the_post();
+										?>	
+											<li class="col-md-6">
+												<div href="#" class="video-wrapper">
+													<?php the_field('url_del_video'); ?>
+													<h3 class="img-title"><?php the_title(); ?></h3>	
+												</div>
+											</li>
+										
+										<!--<li class="col-md-6">
 											<div href="#" class="video-wrapper">
 												<iframe width="560" height="315" src="https://www.youtube.com/embed/jY8f4s4I3h0?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 												<h3 class="img-title">Auditorio Nacional de Música,  Madrid 2014</h3>	
@@ -154,24 +157,28 @@
 												<iframe width="560" height="315" src="https://www.youtube.com/embed/jY8f4s4I3h0?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 												<h3 class="img-title">Auditorio Nacional de Música,  Madrid 2014</h3>	
 											</div>
-										</li>
-										<li class="col-md-6">
-											<div href="#" class="video-wrapper">
-												<iframe width="560" height="315" src="https://www.youtube.com/embed/jY8f4s4I3h0?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-												<h3 class="img-title">Auditorio Nacional de Música,  Madrid 2014</h3>	
-											</div>
-										</li>
+										</li>-->
+										<?php
+											endwhile;
+										?>
 									</ul>
 
 									<div class="paginator">
-										<span><i class="fal fa-long-arrow-left"></i></span>
-										<ul>
-											<li>1</li>
-											<li>2</li>
-											<li>3</li>
-											<li>4</li>
-										</ul>
-										<span><i class="fal fa-long-arrow-right"></i></span>
+										<?php 	
+											$big = 999999999; // need an unlikely integer
+
+											echo paginate_links( array(
+												'base' 		=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+												'format' 	=> '?paged=%#%',
+												'current' 	=> max( 1, get_query_var('paged') ),
+												'total'		=> $videos->max_num_pages,
+												'prev_text'	=> __('<span><i class="fal fa-long-arrow-left"></i></span>'),
+												'next_text'	=> __('<span><i class="fal fa-long-arrow-right"></i></span>'),
+												'type'      => 'list',
+											) );
+											
+											wp_reset_query();
+										?>
 									</div>
 								</div>
 							</div>
