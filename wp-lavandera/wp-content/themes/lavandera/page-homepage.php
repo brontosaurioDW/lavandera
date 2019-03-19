@@ -22,20 +22,29 @@
 				<div class="container">
 					<div class="row">
 						<?php
-								// Get the 'Profiles' post type
-								$args = array(
-								    'post_type' => 'eventos',
-									'showposts'=> '1'
-								);
-
-								$loop = new WP_Query($args);
-
-								while($loop->have_posts()): $loop->the_post();
+							//formato de fecha como fue puesto en el "Return Format" del custom field Eventos/fecha
+							$today = date('d M Y');
 								
-									// Para formatear-subdividir la fecha
-									$fecha = get_field('fecha', false, false); //fecha en bruto
-									$fecha = new DateTime($fecha); //objeto fecha
-							?>
+							// Get the 'Profiles' post type
+							$args = array(
+							    'post_type' => 'eventos',
+								'showposts'=> '1',
+								'meta_query'  => array(
+									'key'     => 'fecha',
+									'value'   => $today,
+									'compare' => '>=',
+									'type'    => 'DATE'
+								),
+							);
+
+							$loop = new WP_Query($args);
+
+							while($loop->have_posts()): $loop->the_post();
+								
+								// Para formatear-subdividir la fecha
+								$fecha = get_field('fecha', false, false); //fecha en bruto
+								$fecha = new DateTime($fecha); //objeto fecha
+						?>
 						<!-- HERO block tablet / desktop -->
 						<div class="col-md-5 col-lg-4 col-xl-3 d-none d-md-block">
 							<p class="cover-next">Próximo concierto</p>
@@ -76,12 +85,20 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<ul class="concert-list row">
-
 						<?php
+							//formato de fecha como fue puesto en el "Return Format" del custom field Eventos/fecha
+							$today = date('d M Y');
+							
 							// Get the 'Profiles' post type
 							$args = array(
 							    'post_type' => 'eventos',
 								'posts_per_page'=> '6',
+								'meta_query'  => array(
+									'key'     => 'fecha',
+									'value'   => $today,
+									'compare' => '>=',
+									'type'    => 'DATE'
+								),
 								'meta_key' => 'fecha',
 								'orderby'   => 'meta_value',
 								'order' => 'ASC',
@@ -131,7 +148,7 @@
 			</div>
 
 			<div class="cta-wrapper">
-				<a href="/index.php?page_id=19" class="cta-link">
+				<a href="<?=get_permalink( get_page_by_title('Eventos') ); ?>" class="cta-link">
 					<span>Ver todos los conciertos </span>
 					<i class="fal fa-long-arrow-right"></i>
 				</a>
@@ -184,7 +201,7 @@
 
 
 					<div class="cta-wrapper">
-						<a href="#" class="cta-link">
+						<a href="<?=get_permalink( get_page_by_title('Noticias') ); ?>" class="cta-link">
 							<span>Ver todas las noticias</span>
 							<i class="fal fa-long-arrow-right"></i>
 						</a>
