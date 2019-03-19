@@ -18,17 +18,18 @@
 
 			<div class="row">
 				<div class="col-lg-4">
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget quam et magna aliquam accumsan. Duis blandit ullamcorper ex, eu commodo eros ultricies fringilla. Ut pretium hendrerit elit ac vestibulum. Fusce tortor urna, ultricies in nulla egestas, euismod molestie arcu. 
-					</p>
-					<p>
-						Quisque fermentum, urna id imperdiet pulvinar, ante ex placerat risus, eu consectetur massa neque eu ligula. Cras eu ante at erat pulvinar fringilla.
-					</p>
+					<?php	
+						$page_id = 29 ;
+						$page_data = get_page ( $page_id );
+						$content = apply_filters ( 'the_content' , $page_data -> post_content );
+						$title = $page_data -> post_title;
+						echo $content;
+					?>	
 				</div>
 				<div class="col-lg-5">
-					<form>
-						Form 7 aca
-					</form>
+					<?php 
+						echo do_shortcode('[contact-form-7 id="141" title="Formulario de contacto"]');
+					?>				
 				</div>
 				<div class="col-lg-3 d-none d-lg-block">
 					<ul class="social-icons vertical">
