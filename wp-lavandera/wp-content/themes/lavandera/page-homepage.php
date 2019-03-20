@@ -85,12 +85,20 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<ul class="concert-list row">
-
 						<?php
+							//formato de fecha como fue puesto en el "Return Format" del custom field Eventos/fecha
+							$today = date('d M Y');
+							
 							// Get the 'Profiles' post type
 							$args = array(
 							    'post_type' => 'eventos',
 								'posts_per_page'=> '6',
+								'meta_query'  => array(
+									'key'     => 'fecha',
+									'value'   => $today,
+									'compare' => '>=',
+									'type'    => 'DATE'
+								),
 								'meta_key' => 'fecha',
 								'orderby'   => 'meta_value',
 								'order' => 'ASC',
