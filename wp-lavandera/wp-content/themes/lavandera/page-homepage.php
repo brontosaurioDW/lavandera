@@ -22,20 +22,29 @@
 				<div class="container">
 					<div class="row">
 						<?php
-								// Get the 'Profiles' post type
-								$args = array(
-								    'post_type' => 'eventos',
-									'showposts'=> '1'
-								);
-
-								$loop = new WP_Query($args);
-
-								while($loop->have_posts()): $loop->the_post();
+							//formato de fecha como fue puesto en el "Return Format" del custom field Eventos/fecha
+							$today = date('d M Y');
 								
-									// Para formatear-subdividir la fecha
-									$fecha = get_field('fecha', false, false); //fecha en bruto
-									$fecha = new DateTime($fecha); //objeto fecha
-							?>
+							// Get the 'Profiles' post type
+							$args = array(
+							    'post_type' => 'eventos',
+								'showposts'=> '1',
+								'meta_query'  => array(
+									'key'     => 'fecha',
+									'value'   => $today,
+									'compare' => '>=',
+									'type'    => 'DATE'
+								),
+							);
+
+							$loop = new WP_Query($args);
+
+							while($loop->have_posts()): $loop->the_post();
+								
+								// Para formatear-subdividir la fecha
+								$fecha = get_field('fecha', false, false); //fecha en bruto
+								$fecha = new DateTime($fecha); //objeto fecha
+						?>
 						<!-- HERO block tablet / desktop -->
 						<div class="col-md-5 col-lg-4 col-xl-3 d-none d-md-block">
 							<p class="cover-next">Próximo concierto</p>
