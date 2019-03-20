@@ -43,7 +43,6 @@
 										<?php
 											$paginacion = (get_query_var('paged')) ? get_query_var('paged') : 1;
 											
-											// Get the 'Profiles' post type
 											$args = array(
 												'post_type' => 'fotos',
 												'posts_per_page'=> '12',
@@ -55,7 +54,7 @@
 											while($fotos->have_posts()): $fotos->the_post();
 										?>		
 											<li class="col-md-6 col-lg-4 col-xl-3">
-												<a href="#" class="img-wrapper">
+												<a href="#" class="img-wrapper" data-id-foto="<?php echo $post->ID; ?>">
 													<?php 
 
 													$image = get_field('foto');
@@ -95,9 +94,31 @@
 									</div>
 								</div>
 								<div class="col-lg-4 d-none d-lg-block">
+									
 									<div class="img-preview">
-										<img src="https://picsum.photos/160/220" alt="">
-										<h3 class="img-title">Auditorio Nacional de Música,  Madrid 2014</h3>									
+										<?php											
+											$args = array(
+												'post_type' => 'fotos'
+											);
+
+											$fotos = new WP_Query($args);
+
+											while($fotos->have_posts()): $fotos->the_post();
+
+											$image = get_field('foto');
+											$size = 'full'; // (thumbnail, medium, large, full or custom size)
+										?>
+											<div class="preview-foto js-preview-foto" data-id-foto="<?php echo $post->ID; ?>">
+												<?php 
+													if( $image ) {
+														echo wp_get_attachment_image( $image, $size );
+													}
+												?>
+												<h3 class="d-lg-none"><?php the_title(); ?></h3>
+											</div>												
+										<?php
+											endwhile;
+										?>		
 									</div>
 								</div>
 							</div>
@@ -127,37 +148,6 @@
 													<h3 class="img-title"><?php the_title(); ?></h3>	
 												</div>
 											</li>
-										
-										<!--<li class="col-md-6">
-											<div href="#" class="video-wrapper">
-												<iframe width="560" height="315" src="https://www.youtube.com/embed/jY8f4s4I3h0?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-												<h3 class="img-title">Auditorio Nacional de Música,  Madrid 2014</h3>	
-											</div>
-										</li>
-										<li class="col-md-6">
-											<div href="#" class="video-wrapper">
-												<iframe width="560" height="315" src="https://www.youtube.com/embed/jY8f4s4I3h0?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-												<h3 class="img-title">Auditorio Nacional de Música,  Madrid 2014</h3>	
-											</div>
-										</li>
-										<li class="col-md-6">
-											<div href="#" class="video-wrapper">
-												<iframe width="560" height="315" src="https://www.youtube.com/embed/jY8f4s4I3h0?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-												<h3 class="img-title">Auditorio Nacional de Música,  Madrid 2014</h3>	
-											</div>
-										</li>
-										<li class="col-md-6">
-											<div href="#" class="video-wrapper">
-												<iframe width="560" height="315" src="https://www.youtube.com/embed/jY8f4s4I3h0?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-												<h3 class="img-title">Auditorio Nacional de Música,  Madrid 2014</h3>	
-											</div>
-										</li>
-										<li class="col-md-6">
-											<div href="#" class="video-wrapper">
-												<iframe width="560" height="315" src="https://www.youtube.com/embed/jY8f4s4I3h0?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-												<h3 class="img-title">Auditorio Nacional de Música,  Madrid 2014</h3>	
-											</div>
-										</li>-->
 										<?php
 											endwhile;
 										?>

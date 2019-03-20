@@ -75,7 +75,10 @@
 								</div>
 								<div class="dg-share">
 									<h4>COMPARTIR EVENTO:</h4>
-									<ul class="share-list social-icons">
+									<?php 
+										echo do_shortcode('[ssba-buttons]');
+									?>
+									<!--<ul class="share-list social-icons">
 										<li>
 											<a href="#">
 												<i class="fab fa-facebook-f"></i>
@@ -91,7 +94,7 @@
 												<i class="fas fa-envelope"></i>
 											</a>
 										</li>
-									</ul>
+									</ul>-->
 								</div>
 							
 								<?php 

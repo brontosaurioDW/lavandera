@@ -38,7 +38,10 @@
 
 				<div class="col-lg-4">
 					<span class="share-title">Compartir noticia:</span>
-					<ul class="share-list social-icons">
+					<?php 
+						echo do_shortcode('[ssba-buttons]');
+					?>
+					<!--<ul class="share-list social-icons">
 						<li>
 							<a href="#">
 								<i class="fab fa-facebook-f"></i>
@@ -54,7 +57,7 @@
 								<i class="fas fa-envelope"></i>
 							</a>
 						</li>
-					</ul>
+					</ul>-->
 				</div>
 			</div>
 			
@@ -65,10 +68,9 @@
 					<?php
 						$image = get_field('foto');
 						$size = 'full'; // (thumbnail, medium, large, full or custom size)
+						
 						if( $image ) {
 							echo wp_get_attachment_image( $image, $size);
-						}else{
-							echo '<img src="https://placekitten.com/600/400" alt="image description">';
 						}
 					?>
 

@@ -18,35 +18,37 @@
 
 		if( !empty($image) ): ?>
 		<section class="cover" style="background-image: url(<?php echo $image['url']; ?>)">
-			<div class="cover-container">
-				<div class="container">
-					<div class="row">
-						<?php
-							//formato de fecha como fue puesto en el "Return Format" del custom field Eventos/fecha
-							$today = date('d M Y');
-								
-							// Get the 'Profiles' post type
-							$args = array(
-							    'post_type' => 'eventos',
-								'showposts'=> '1',
-								'meta_query'  => array(
-									'key'     => 'fecha',
-									'value'   => $today,
-									'compare' => '>=',
-									'type'    => 'DATE'
-								),
-							);
+			<?php
+				//formato de fecha como fue puesto en el "Return Format" del custom field Eventos/fecha
+				$today = date('F j, Y');
+				var_dump($today);
+				
+				// Get the 'Profiles' post type
+				$args = array(
+				    'post_type' => 'eventos',
+					'showposts'=> '1',
+					'meta_query'  => array(
+						'key'     => 'fecha',
+						'value'   => $today,
+						'compare' => '>=',
+						'type'    => 'DATE'
+					),					
+				);
 
-							$loop = new WP_Query($args);
+				$loop = new WP_Query($args);
 
-							while($loop->have_posts()): $loop->the_post();
-								
-								// Para formatear-subdividir la fecha
-								$fecha = get_field('fecha', false, false); //fecha en bruto
-								$fecha = new DateTime($fecha); //objeto fecha
-						?>
+				while($loop->have_posts()): $loop->the_post();
+					
+					// Para formatear-subdividir la fecha
+					$fecha = get_field('fecha', false, false); //fecha en bruto
+					$fecha = new DateTime($fecha); //objeto fecha
+			?>
+			
+			<a href="<?php the_permalink($post->ID); ?>">
+				<div class="cover-container">
+					<div class="container">
 						<!-- HERO block tablet / desktop -->
-						<div class="col-md-5 col-lg-4 col-xl-3 d-none d-md-block">
+						<div class="d-none d-md-block cover-info">
 							<p class="cover-next">Próximo concierto</p>
 							<p class="cover-title">
 								<span class="title-month"><?php echo $fecha->format('M'); ?></span>
@@ -60,7 +62,7 @@
 						</div>
 
 						<!-- HERO block mobile -->
-						<div class="col-12 d-block d-md-none">
+						<div class="col-12 d-md-none">
 							<p class="cover-next">Próximo concierto: <span class="semi-bold"><?php echo $fecha->format('M j'); ?></span></p>
 							<p class="cover-title extra-bold"><?php the_title(); ?></p>
 							<p class="cover-venue">
@@ -75,7 +77,7 @@
 						?>
 					</div>
 				</div>
-			</div>
+			</a>
 		</section>
 	<?php endif; ?>
 

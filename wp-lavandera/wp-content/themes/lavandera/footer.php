@@ -31,10 +31,26 @@
 					<div class="row justify-content-md-center">
 						<div class="col-sm-10 col-md-3">
 							<ul class="social-icons">
-								<li><i class="fab fa-facebook-f"></i></li>
-								<li><i class="fab fa-twitter"></i></li>
-								<li><i class="fab fa-instagram"></i></li>
-								<li><i class="fab fa-youtube"></i></li>
+								<li>
+									<a target="_blank" href="<?php echo of_get_option('sn_facebook'); ?>">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li>
+									<a target="_blank" href="<?php echo of_get_option('sn_twitter'); ?>">
+										<i class="fab fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a target="_blank" href="<?php echo of_get_option('sn_instagram'); ?>">
+										<i class="fab fa-instagram"></i>
+									</a>
+								</li>
+								<li>
+									<a target="_blank" href="<?php echo of_get_option('sn_youtube'); ?>">
+										<i class="fab fa-youtube"></i>
+									</a>
+								</li>
 							</ul>
 						</div>
 						<div class="col-sm-12">

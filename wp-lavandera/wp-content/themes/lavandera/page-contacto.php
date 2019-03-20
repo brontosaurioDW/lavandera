@@ -27,14 +27,16 @@
 					?>	
 				</div>
 				<div class="col-lg-5">
-					<?php 
-						echo do_shortcode('[contact-form-7 id="141" title="Formulario de contacto"]');
-					?>				
+					<div class="form">
+						<?php 
+							echo do_shortcode('[contact-form-7 id="141" title="Formulario de contacto"]');
+						?>										
+					</div>
 				</div>
 				<div class="col-lg-3 d-none d-lg-block">
 					<ul class="social-icons vertical">
 						<li>
-							<a href="#">
+							<a target="_blank" href="<?php echo of_get_option('sn_facebook'); ?>">
 								<span class="icon-wrapper">
 									<i class="fab fa-facebook-f"></i>
 								</span>
@@ -42,7 +44,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a target="_blank" href="<?php echo of_get_option('sn_twitter'); ?>">
 								<span class="icon-wrapper">
 									<i class="fab fa-twitter"></i>
 								</span>
@@ -50,7 +52,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a target="_blank" href="<?php echo of_get_option('sn_instagram'); ?>">
 								<span class="icon-wrapper">
 									<i class="fab fa-instagram"></i>
 								</span>
@@ -58,7 +60,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a target="_blank" href="<?php echo of_get_option('sn_youtube'); ?>">
 								<span class="icon-wrapper">
 									<i class="fab fa-youtube"></i>
 								</span>

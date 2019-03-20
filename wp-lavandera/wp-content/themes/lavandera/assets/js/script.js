@@ -7,6 +7,12 @@ $(document).ready(function() {
 
 	// Discografia
 	Discografia();
+
+	// Video Biografia
+	VideoBiografia();
+
+	// Media
+	Media();
 });
 
 $(window).on('resize', function(event) {
@@ -14,6 +20,7 @@ $(window).on('resize', function(event) {
 
 	// Discografia
 	Discografia();
+
 });
 
 // Sticky header
@@ -43,21 +50,71 @@ function Discografia() {
 				$(discSongs).slideUp(500);
 			});
 		});
-	} else {
+	} else {		
+		$('.disc-list .js-show-disc').first().addClass('active');
+
 		$('.js-show-disc').each(function(index, el) {
-			/*var discInfo 	= $(el).find('.disc-info-wrapper .disc-img');
-			var discSongs 	= $(el).find('.disc-info-detail');
-			var closeSongs 	= $(discSongs).find('.js-close-detail');
+			$(el).on('click', function() {
+				$('.js-show-disc').removeClass('active');
+				$(this).addClass('active');
 
-			$(discInfo).on('click',  function(event) {
-				event.preventDefault();
-				$(discSongs).slideToggle(500);
+				var idDelClick = $(this).data('disc-id');
+
+				$('.js-preview-disc').each(function(index, el) {
+					var idDeLaSidebar = $(el).data('disc-id');		
+					var elDeLaSidebar = $(el);			
+
+					if (idDeLaSidebar == idDelClick) {	
+						$('.js-preview-disc').hide();	
+
+						$(elDeLaSidebar).fadeIn('fast');
+					}
+				});
 			});
+		});
+	}
+}
 
-			$(closeSongs).on('click',  function(event) {
-				event.preventDefault();
-				$(discSongs).slideUp(500);
-			});*/
+// Biografía
+function VideoBiografia() {
+	var videoPlay	 	= $('.js-play');
+	var videoBiografia 	= $('.js-video-bio');
+	var videoIframe	 	= $(videoBiografia).find('iframe');
+
+	$(videoPlay).one('click', function(event) {
+		event.preventDefault();
+		
+		$(this).hide();
+		$(videoBiografia).show();
+
+		var symbol = $(videoIframe)[0].src.indexOf("?") > -1 ? "&" : "?";
+		$(videoIframe)[0].src += symbol + "autoplay=1";
+	});
+}
+
+// Media
+function Media() {
+	if ($(window).width() > 991) {
+		$('.media-list > li').first().find('.img-wrapper').addClass('active');
+
+		$('.media-list > li .img-wrapper').each(function(index, el) {
+			$(el).on('click', function() {
+				$('.media-list > li .img-wrapper').removeClass('active');
+				$(this).addClass('active');
+
+				var idDelClick = $(this).data('id-foto');
+
+				$('.js-preview-disc').each(function(index, el) {
+					var idDeLaSidebar = $(el).data('id-foto');		
+					var elDeLaSidebar = $(el);			
+
+					if (idDeLaSidebar == idDelClick) {	
+						$('.js-preview-foto').hide();	
+
+						$(elDeLaSidebar).fadeIn('fast');
+					}
+				});
+			});
 		});
 	}
 }

@@ -21,7 +21,7 @@ Site: HL;
  	* 4.2 - Tablet
  	* 4.3 - Desktop
  * 5.0 - Cover
- 	* 5.1 - General
+ 	* 5.1 - General0
  	* 5.2 - Tablet
  	* 5.3 - Desktop
  * 6.0 - Dates
@@ -286,8 +286,14 @@ header.fixed {
 	cursor: pointer;
 }
 
-.navbar-all .navbar-toggler {
-	padding: 0;
+.navbar-toggler {
+	padding: 0 0 0 1rem;
+	background: none;
+	border: 0;
+	font-size: 18px;
+	border-left: 1px solid #ddd;
+	margin-left: 1rem;
+	cursor: pointer;
 }
 
 .menu-mobile .show {
@@ -314,6 +320,10 @@ header.fixed {
 	display: inline-block;
 	padding: 0 15px;
 	font-size: 25px;
+}
+
+.social-icons li a {
+	color: #24659E;
 }
 
 .social-icons.vertical li {
@@ -390,6 +400,12 @@ header.fixed {
 .language button span {
 	display: inline-block;
 	margin: 0 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+	.social-icons li a {
+	    color: #ffffff;
+	}
 }
 
 /* 3.2 Tablet
@@ -541,15 +557,17 @@ footer .disclaimer {
 .cover {
 	max-width: 1140px;
 	margin: auto;
-	padding: 100px 0;
-	background:linear-gradient(0deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+	background:linear-gradient(0deg,rgba(0,0,0,0.6), rgba(0,0,0,0.6));
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	color: #fff;
 	text-align: center;
-	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
+}
+
+.cover > a {
 	height: 100vh;
 	max-height: 475px;
 	display: -webkit-box;
@@ -559,6 +577,16 @@ footer .disclaimer {
 	-ms-flex-align: center;
 	-ms-grid-row-align: center;
 	align-items: center;
+	color: white;
+}
+
+.cover .cover-container {
+	width: 100%;
+}
+
+.cover .cover-info {
+    max-width: 275px;
+    width: 45%;
 }
 
 .cover .cover-next {
@@ -683,6 +711,9 @@ footer .disclaimer {
 		line-height: 150%;
 	}
 
+	.cover .cover-info {
+	    margin-left: 25px;
+	}
 }
 
 /* =====================
@@ -750,18 +781,18 @@ footer .disclaimer {
 }
 
 .dg-info-grid .dg-ig-title {
-	padding: 20px;
-	font-size: 21px;
+	padding: 15px;
+	font-size: 19px;
 	font-weight: 600;
 	text-transform: uppercase;
 	border-bottom: 2px solid #373737;
 	letter-spacing: 2px;
-	min-height: 85px;
+	min-height: 70px;
 	word-break: break-word;
 }
 
 .dg-info-grid .dg-ig-venue {
-	padding: 20px;
+	padding: 15px;
 	font-size: 14px;
 	letter-spacing: 1px;
 	line-height: 140%;
@@ -971,8 +1002,10 @@ footer .disclaimer {
 
 .news-list .news-single img {
 	object-fit: cover;
+	object-position: top;
 	max-width: none;
-	height: auto;
+	height: 195px;
+	width: 100%;
 	display: block;
 }
 
@@ -1116,6 +1149,10 @@ footer .disclaimer {
 ------------------------
 */
 
+.page-template-page-biografia {
+	padding-top: 45px;
+}
+
 .hero-full {	
 	background-size: cover;
 	background-position: center center;
@@ -1159,6 +1196,18 @@ footer .disclaimer {
 	margin: 1.5rem 0 1rem;
 }
 
+.biography .video-bio {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+.biography .video-bio iframe {
+	width: 100%;
+	height: 100vh;
+	max-height: 520px;
+}
+
 /* 9.2 Desktop
 ------------------------
 */
@@ -1172,7 +1221,7 @@ footer .disclaimer {
 	}
 
 	.divisor {
-		height: 1px;
+		height: 2px;
 		background: #D9D9D9;
 		display: block;
 		width: 100%;
@@ -1203,6 +1252,62 @@ footer .disclaimer {
 	margin-top: 0;
 }
 
+.form label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.form span {
+	display: block;
+}
+
+.form input,
+.form textarea {
+	border:  1px solid #D9D9D9;
+	width: 100%;
+	outline: none;
+	margin-top: 5px;
+	font-weight: 500;
+}
+
+.form input {
+	line-height: 40px;
+	padding: 0 10px;
+}
+
+.form textarea {
+	padding: 10px;
+	resize: none;
+	max-height: 140px;
+}
+
+.form input[type="submit"] {
+	background: none;
+	font-size: 12px;
+	font-weight: 600;
+	color: #373737;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	border: 0;
+	float: right;
+	display: inline-block;
+	width: auto;
+	padding: 0;
+	margin: 0;
+}
+
+div.wpcf7-validation-errors, 
+div.wpcf7-acceptance-missing {
+    border: 0;
+    font-size: 12px;
+    padding: 0;
+    color: #efb720;
+    line-height: 150%;
+    margin: 0;
+}
+
 /* =====================
     11.0 Discografia
    ===================== */
@@ -1217,8 +1322,14 @@ footer .disclaimer {
 
 .disc-list > li {
 	border-bottom: 1px solid #D9D9D9;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
+	padding: 20px 0;
+	transition: .3s;
+	cursor: pointer;
+}
+
+.disc-list > li.active {
+	background: #f9f9f9;
+	padding: 20px;
 }
 
 .disc-list .disc-info-wrapper {
@@ -1235,10 +1346,11 @@ footer .disclaimer {
 }
 
 .disc-img img {
-	width: auto;
+	width: 130px;
 	height: 100%;
 	object-fit: cover;
-	max-width: unset;
+	max-width: unset;	
+	transition: .3s;
 }
 
 .disc-info {
@@ -1310,6 +1422,10 @@ footer .disclaimer {
 	border: none;
 }
 
+.disc-big {
+	margin-top: 20px;
+}
+
 .disc-big .disc-img {
 	width: 100%;
 	height: auto;
@@ -1319,6 +1435,15 @@ footer .disclaimer {
 	height: auto;
 	width: 100%;
 }
+
+.preview-disc {
+	display: none;
+}
+
+.preview-disc:first-of-type {
+	display: block;
+}
+
 
 /* 11.2 Desktop
 ------------------------
