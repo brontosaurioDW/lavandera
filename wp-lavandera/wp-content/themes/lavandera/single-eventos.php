@@ -111,6 +111,7 @@
 				<ul class="concert-list white row">
 					<?php	
 						$idDelPost = get_the_ID();
+						$currentTime = date("Ymd");
 
 						$args = array(
 						    'post_type' => 'eventos',
@@ -119,6 +120,14 @@
 							'orderby'   => 'meta_value', //ordena por el valor del meta_key que indicamos
 							'order' => 'ASC',
 							'post__not_in' => array($idDelPost),
+							'meta_query' => array( 
+					            array(
+					                'key' => 'fecha', 
+					                'value' => date("Ymd"),
+					                'compare' => '>=', 
+					                'type' => 'DATE'
+				                )
+				            )	
 						);
 						
 						$loop = new WP_Query($args);

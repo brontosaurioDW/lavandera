@@ -22,7 +22,7 @@
 							// Get the 'Profiles' post type
 							$paginacion = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-							$currentTime = current_time('j M Y');
+							$currentTime = date("Ymd");
 							
 							$args = array(
 							    'post_type' => 'eventos',
@@ -35,7 +35,7 @@
 								'meta_query' => array( 
 						            array(
 						                'key' => 'fecha', 
-						                'value' => date("j M Y"),
+						                'value' => date("Ymd"),
 						                'compare' => '>=', 
 						                'type' => 'DATE'
 					                )

@@ -20,19 +20,21 @@
 		<section class="cover" style="background-image: url(<?php echo $image['url']; ?>)">
 			<?php
 				//formato de fecha como fue puesto en el "Return Format" del custom field Eventos/fecha
-				$today = date('F j, Y');
-				/*var_dump($today);*/
+				$currentTime = date("Ymd");
 				
 				// Get the 'Profiles' post type
 				$args = array(
 				    'post_type' => 'eventos',
 					'showposts'=> '1',
-					'meta_query'  => array(
-						'key'     => 'fecha',
-						'value'   => $today,
-						'compare' => '>=',
-						'type'    => 'DATE'
-					),					
+					'order' => 'ASC',
+					'meta_query' => array( 
+			            array(
+			                'key' => 'fecha', 
+			                'value' => date("Ymd"),
+			                'compare' => '>=', 
+			                'type' => 'DATE'
+		                )
+		            )				
 				);
 
 				$loop = new WP_Query($args);
@@ -89,21 +91,24 @@
 					<ul class="concert-list row">
 						<?php
 							//formato de fecha como fue puesto en el "Return Format" del custom field Eventos/fecha
-							$today = date('d M Y');
+							$currentTime = date("Ymd");							
 							
 							// Get the 'Profiles' post type
 							$args = array(
 							    'post_type' => 'eventos',
 								'posts_per_page'=> '6',
-								'meta_query'  => array(
-									'key'     => 'fecha',
-									'value'   => $today,
-									'compare' => '>=',
-									'type'    => 'DATE'
-								),
+								'order' => 'ASC',								
 								'meta_key' => 'fecha',
 								'orderby'   => 'meta_value',
-								'order' => 'ASC',
+								'offset' => 1,
+								'meta_query' => array( 
+						            array(
+						                'key' => 'fecha', 
+						                'value' => date("Ymd"),
+						                'compare' => '>=', 
+						                'type' => 'DATE'
+					                )
+					            )	
 							);
 
 							$loop = new WP_Query($args);
