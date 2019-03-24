@@ -28,10 +28,18 @@
 							    'post_type' => 'eventos',
 							    'post_status' => 'publish',
 								'posts_per_page'=> '9',
-								'meta_key' => 'fecha', //para ordenar por fecha
-								'orderby'   => 'meta_value', //ordena por el valor del meta_key que indicamos
+								'meta_key' => 'fecha', 
+								'orderby'   => 'meta_value', 
 								'order' => 'ASC',
-								'paged' => $paginacion
+								'paged' => $paginacion,
+								'meta_query' => array( 
+						            array(
+						                'key' => 'fecha', 
+						                'value' => date("j M Y"),
+						                'compare' => '>=', 
+						                'type' => 'DATE'
+					                )
+					            )	
 							);
 							
 							$loop = new WP_Query($args);
@@ -46,9 +54,11 @@
 						<li class="col-sm-12 col-md-6 col-lg-4">
 							<div class="date-grid">
 								<div class="dg-date">
-									<span class="day extra-bold"><?php echo $fecha->format('j'); ?></span>
-									<span class="month extra-bold"><?php echo $fecha->format('M'); ?></span>
-									<span class="year"><?php echo $fecha->format('Y'); ?></span>
+									<a href="<?php echo get_permalink(); ?>">
+										<span class="day extra-bold"><?php echo $fecha->format('j'); ?></span>
+										<span class="month extra-bold"><?php echo $fecha->format('M'); ?></span>
+										<span class="year"><?php echo $fecha->format('Y'); ?></span>
+									</a>
 								</div>
 								<div class="dg-info-grid">
 									<div class="dg-ig-title">

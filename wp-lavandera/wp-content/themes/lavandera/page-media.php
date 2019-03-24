@@ -38,7 +38,7 @@
 					<div class="tab-content" id="nav-tabContent">
 						<div class="tab-pane fade show active" id="foto" role="tabpanel" aria-labelledby="foto-tab">
 							<div class="row">
-								<div class="col-lg-8">										
+								<div class="col-lg-7">										
 									<ul class="media-list row">
 										<?php
 											$paginacion = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -57,16 +57,14 @@
 												<a href="#" class="img-wrapper" data-id-foto="<?php echo $post->ID; ?>">
 													<?php 
 
-													$image = get_field('foto');
-													$size = 'full'; // (thumbnail, medium, large, full or custom size)
+														$image = get_field('foto');
+														$size = 'full'; // (thumbnail, medium, large, full or custom size)
 
-													if( $image ) {
+														if( $image ) {
+															echo wp_get_attachment_image( $image, $size );
+														}
 
-														echo wp_get_attachment_image( $image, $size );
-
-													}
-
-												?>
+													?>
 												</a>
 												<h3 class="d-lg-none"><?php the_title(); ?></h3>
 											</li>
@@ -93,26 +91,30 @@
 										?>
 									</div>
 								</div>
-								<div class="col-lg-4 d-none d-lg-block">
+								<div class="col-lg-5 d-none d-lg-block">
 									
 									<div class="img-preview">
-										<?php											
+										<?php
+											
 											$args = array(
-												'post_type' => 'fotos'
+												'post_type' => 'fotos',
+												'posts_per_page' => -1
 											);
 
 											$fotos = new WP_Query($args);
 
 											while($fotos->have_posts()): $fotos->the_post();
-
-											$image = get_field('foto');
-											$size = 'full'; // (thumbnail, medium, large, full or custom size)
-										?>
+										?>		
 											<div class="preview-foto js-preview-foto" data-id-foto="<?php echo $post->ID; ?>">
 												<?php 
-													if( $image ) {
-														echo wp_get_attachment_image( $image, $size );
+
+													$imageFull = get_field('foto');
+													$sizeFull = 'full'; 
+
+													if( $imageFull ) {
+														echo wp_get_attachment_image( $imageFull, $sizeFull );
 													}
+
 												?>
 												<h3 class="d-lg-none"><?php the_title(); ?></h3>
 											</div>												
@@ -134,7 +136,6 @@
 											// Get the 'Profiles' post type
 											$args = array(
 												'post_type' => 'videos',
-												'posts_per_page'=> '6',
 												'paged' => $paginacion,
 											);
 
@@ -153,7 +154,7 @@
 										?>
 									</ul>
 
-									<div class="paginator">
+									<!-- <div class="paginator">
 										<?php 	
 											$big = 999999999; // need an unlikely integer
 
@@ -169,7 +170,7 @@
 											
 											wp_reset_query();
 										?>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>

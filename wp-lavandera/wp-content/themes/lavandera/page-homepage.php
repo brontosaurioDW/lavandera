@@ -21,7 +21,7 @@
 			<?php
 				//formato de fecha como fue puesto en el "Return Format" del custom field Eventos/fecha
 				$today = date('F j, Y');
-				var_dump($today);
+				/*var_dump($today);*/
 				
 				// Get the 'Profiles' post type
 				$args = array(

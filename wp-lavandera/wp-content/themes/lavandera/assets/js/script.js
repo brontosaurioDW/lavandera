@@ -98,18 +98,21 @@ function Media() {
 		$('.media-list > li').first().find('.img-wrapper').addClass('active');
 
 		$('.media-list > li .img-wrapper').each(function(index, el) {
-			$(el).on('click', function() {
+			$(el).on('click', function(e) {
+				e.preventDefault();
 				$('.media-list > li .img-wrapper').removeClass('active');
 				$(this).addClass('active');
 
-				var idDelClick = $(this).data('id-foto');
+				var idDelClick = $(this).data('id-foto');			
+				console.log(idDelClick);
 
-				$('.js-preview-disc').each(function(index, el) {
+				$('.js-preview-foto').each(function(index, el) {
 					var idDeLaSidebar = $(el).data('id-foto');		
 					var elDeLaSidebar = $(el);			
 
 					if (idDeLaSidebar == idDelClick) {	
 						$('.js-preview-foto').hide();	
+						console.log(idDeLaSidebar);
 
 						$(elDeLaSidebar).fadeIn('fast');
 					}

@@ -110,12 +110,12 @@ html{
    ===================== */
 
 body {
-	padding-top: 55px;
+	padding-top: 75px;
 }
 
 @media screen and (min-width: 768px) {
 	body {
-		padding-top: 65px;
+		padding-top: 95px;
 	}
 }
 
@@ -743,6 +743,11 @@ footer .disclaimer {
 	color: #373737;
 }
 
+
+.dates .dg-date a {
+	color: #ffffff;
+}
+
 .dates .concert-list .date-grid {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -786,7 +791,7 @@ footer .disclaimer {
 	font-weight: 600;
 	text-transform: uppercase;
 	border-bottom: 2px solid #373737;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	min-height: 70px;
 	word-break: break-word;
 }
@@ -1025,6 +1030,10 @@ footer .disclaimer {
 	color:  #373737;
 }
 
+.noticia-single .ssbp-wrap.ssbp-wrap {
+    margin-top: 15px;
+}
+
 .noticia-single .img-date {
 	font-size: 12px;
 	font-weight: normal;
@@ -1071,6 +1080,10 @@ footer .disclaimer {
 	color: #373737;
 }
 
+.noticia-content {
+	margin-top: 20px;
+}
+
 .noticia-content img {
 	margin: 20px 0;
 	display: block;
@@ -1112,6 +1125,10 @@ footer .disclaimer {
 		font-size: 16px;
 		font-weight: 500;
 		margin-top: 5px;
+	}
+
+	.noticia-content {
+		margin-top: 0;
 	}
 }
 
@@ -1389,7 +1406,8 @@ div.wpcf7-acceptance-missing {
 	color: #373737;
 }
 
-.disc-info .share li {
+.disc-info .share li,
+.ssba a {
 	padding: 0 23px 0 0;
 	display: inline-block;
     font-size: 25px;
@@ -1610,8 +1628,16 @@ div.wpcf7-acceptance-missing {
     margin-bottom: 1rem;
 }
 
+.preview-foto:first-of-type {
+	display: block;
+}
+
+.preview-foto {
+	display: none;
+}
+
 .img-preview { 
-	margin-top: 2rem;
+	margin-top: 35px;
 }
 
 .img-preview img {
@@ -1634,4 +1660,37 @@ div.wpcf7-acceptance-missing {
 	    height: 130px;
 	    margin-bottom: 0;
 	}
+}
+
+@media screen and (min-width: 1024px) {
+	.img-preview {
+	    min-height: 605px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	    background: #ececec;
+	    padding: 15px;
+	    border: 1px solid #ddd;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.img-preview {
+	    min-height: 444px;
+	}
+}
+
+
+/* Share - plugin */
+.ssbp-wrap.ssbp-wrap {
+	background: transparent;
+	margin-top: 6px;
+}
+
+.ssba.ssba img {
+	width: auto!important;
+	height: 16px;
 }

@@ -61,24 +61,6 @@
 														<?php 
 															echo do_shortcode('[ssba-buttons]');
 														?>
-														<!--<ul class="share-list social-icons">
-															
-															<li>
-																<a href="#">
-																	<i class="fab fa-facebook-f"></i>
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	<i class="fab fa-twitter"></i>
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	<i class="fas fa-envelope"></i>
-																</a>
-															</li>
-														</ul>-->
 													</div>
 
 													<div>
@@ -222,24 +204,6 @@
 										<?php endif; ?>
 
 										<div class="share">
-											<ul class="share-list social-icons">
-												<li>
-													<a href="#">
-														<i class="fab fa-facebook-f"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fab fa-twitter"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fas fa-envelope"></i>
-													</a>
-												</li>
-											</ul>
-
 											<ul class="share-list listen-icons">
 												<?php
 													$link_google_play = get_field('enlace_google_play');

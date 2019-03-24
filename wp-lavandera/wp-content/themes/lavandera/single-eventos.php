@@ -78,23 +78,6 @@
 									<?php 
 										echo do_shortcode('[ssba-buttons]');
 									?>
-									<!--<ul class="share-list social-icons">
-										<li>
-											<a href="#">
-												<i class="fab fa-facebook-f"></i>
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<i class="fab fa-twitter"></i>
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<i class="fas fa-envelope"></i>
-											</a>
-										</li>
-									</ul>-->
 								</div>
 							
 								<?php 
@@ -149,9 +132,11 @@
 						<li class="col-md-12 col-md-6 col-lg-4">
 							<div class="date-grid">
 								<div class="dg-date">
-									<span class="day extra-bold"><?php echo $fecha->format('j'); ?></span>
-									<span class="month extra-bold"><?php echo $fecha->format('M'); ?></span>
-									<span class="year"><?php echo $fecha->format('Y'); ?></span>
+									<a href="<?php echo get_permalink(); ?>">
+										<span class="day extra-bold"><?php echo $fecha->format('j'); ?></span>
+										<span class="month extra-bold"><?php echo $fecha->format('M'); ?></span>
+										<span class="year"><?php echo $fecha->format('Y'); ?></span>
+									</a>
 								</div>
 								<div class="dg-info-grid">
 									<div class="dg-ig-title">
