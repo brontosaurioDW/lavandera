@@ -31,18 +31,13 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="icon bold black d-lg-none">HL</a>
 					
 					<div class="menu-right d-flex align-items-center">
-						<div class="dropdown language">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="drop-language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="flag flag-spain"></i>
-								<span>ESP</span>
-								<i class="fas fa-chevron-bottom"></i>
-							</button>
-							<div class="dropdown-menu" aria-labelledby="drop-language">
-								<a class="dropdown-item" href="#">
-									<i class="flag flag-usa"></i>
-									<span>ENG</span>
-								</a>
-							</div>
+						<div class="language">
+							<?php 
+								wp_nav_menu([
+									"menu" => "idiomas", 
+									"container" => "span"
+								]); 
+							?>
 						</div>
 
 						<!-- <button type="button" class="search">
