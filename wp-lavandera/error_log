@@ -1,0 +1,5 @@
+[18-Mar-2019 23:24:29 UTC] Error You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND ( 
+  wp_postmeta.meta_key = 'fecha'
+) AND wp_posts.post_type = 'eventos' A' at line 1 de la base de datos de WordPress para la consulta SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  INNER JOIN wp_postmeta ON ( wp_posts.ID = wp_postmeta.post_id ) WHERE 1=1  AND wp_posts.ID NOT IN () AND ( 
+  wp_postmeta.meta_key = 'fecha'
+) AND wp_posts.post_type = 'eventos' AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'acf-disabled' OR wp_posts.post_status = 'private') GROUP BY wp_posts.ID ORDER BY wp_postmeta.meta_value ASC LIMIT 0, 3 realizada por require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/lavandera/single-eventos.php'), WP_Query->__construct, WP_Query->query, WP_Query->get_posts

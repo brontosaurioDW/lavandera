@@ -1,23 +1,18 @@
 
-# DO NOT REMOVE THIS LINE AND THE LINES BELOW PWPROTECTID:LuBaWeXeny
-#AuthType Basic
-#AuthName "Restricted Access"
-#AuthUserFile /home/u210710958/domains/brontosaurio.com.ar/public_html/dev/horacio-lavandera/.htpasswd
-#Require valid-user
-# DO NOT REMOVE THIS LINE AND THE LINES ABOVE LuBaWeXeny:PWPROTECTID
-
-
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /
-# RewriteBase /lavandera/wp-lavandera/
+RewriteBase /dev/horacio-lavandera/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-# RewriteRule . /lavandera/wp-lavandera/index.php [L]
-
+RewriteRule . /dev/horacio-lavandera/index.php [L]
 </IfModule>
 
 # END WordPress
+# BEGIN WP HTPASSWD
+AuthName "Horacio Lavandera - Restricted area"
+AuthType Basic
+AuthUserFile /home/u210710958/domains/brontosaurio.com.ar/public_html/dev/horacio-lavandera/.htpasswd
+Require valid-user
+# END WP HTPASSWD

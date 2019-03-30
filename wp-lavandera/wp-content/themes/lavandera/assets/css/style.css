@@ -294,6 +294,7 @@ header.fixed {
 	border-left: 1px solid #ddd;
 	margin-left: 1rem;
 	cursor: pointer;
+	border-radius: 0;
 }
 
 .menu-mobile .show {
@@ -1225,6 +1226,10 @@ footer .disclaimer {
 	max-height: 520px;
 }
 
+.biography img {
+	height: auto;
+}
+
 /* 9.2 Desktop
 ------------------------
 */
@@ -1234,7 +1239,6 @@ footer .disclaimer {
 		height: 100vh;
 		margin-bottom: 45px;
 		background-position: top center;
-		background-attachment: fixed;
 	}
 
 	.divisor {
