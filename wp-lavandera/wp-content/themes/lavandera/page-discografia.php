@@ -16,7 +16,7 @@
 		<div class="container">
 			<div class="row justify-content-md-center">
 				<div class="col-sm-12">
-					<h2>Discografía</h2>
+					<h2><?php the_title(); ?></h2>
 
 					<div class="row">
 						<div class="col-lg-7">
@@ -57,7 +57,20 @@
 
 												<div class="share">
 													<div>
-														<h4 class="d-none d-lg-block">Compartir: </h4>
+														<h4 class="d-none d-lg-block">
+															<?php
+																switch(qtrans_getLanguage()) {
+																	case 'es': ?>
+																		Compartir:
+																	<?                        
+																	break;
+																	case 'en': ?>
+																		Share
+																		<?                        
+																	break;
+																}
+															?>
+														</h4>
 														<?php 
 															echo do_shortcode('[ssba-buttons]');
 														?>
@@ -73,7 +86,20 @@
 														<?php 
 															if ($link_google_play || $link_itunes || $link_spotify){
 														?>
-																<h4 class="d-none d-lg-block">Escuchar: </h4>
+																<h4 class="d-none d-lg-block">
+																	<?php
+																		switch(qtrans_getLanguage()) {
+																			case 'es': ?>
+																				Escuchar:
+																			<?                        
+																			break;
+																			case 'en': ?>
+																				Listen:
+																				<?                        
+																			break;
+																		}
+																	?>
+																</h4>
 																<ul class="share-list listen-icons">
 																											
 																<?php 

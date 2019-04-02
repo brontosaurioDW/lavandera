@@ -55,26 +55,91 @@
 									<?php 
 										$hora = get_field('hora');
 									?>
-
+									
 									<ul>
 										<li>
-											<span class="semi-bold">País:</span> <?php echo get_field('pais'); ?>
+											<span class="semi-bold">
+												<?php
+													switch(qtrans_getLanguage()) {
+														case 'es': ?>
+															País:
+															<?                        
+														break;
+														case 'en': ?>
+															Country:
+															<?                        
+														break;
+													}
+												?>
+											</span> <?php echo get_field('pais'); ?>
 										</li>
 										<li>
-											<span class="semi-bold">Ciudad:</span> <?php echo get_field('ciudad'); ?>
+											<span class="semi-bold">
+												<?php
+													switch(qtrans_getLanguage()) {
+														case 'es': ?>
+															Ciudad:
+															<?                        
+														break;
+														case 'en': ?>
+															City:
+															<?                        
+														break;
+													}
+												?>
+											</span> <?php echo get_field('ciudad'); ?>
 										</li>
 										<li>
-											<span class="semi-bold">Lugar:</span> <?php echo get_field('lugar'); ?>
+											<span class="semi-bold">
+												<?php
+													switch(qtrans_getLanguage()) {
+														case 'es': ?>
+															Lugar:
+															<?                        
+														break;
+														case 'en': ?>
+															Place:
+															<?                        
+														break;
+													}
+												?>
+											</span> <?php echo get_field('lugar'); ?>
 										</li>
 										<?php if ($hora){ ?>
 											<li>
-												<span class="semi-bold">Hora:</span> <?php echo $hora; ?>
+												<span class="semi-bold">
+													<?php
+													switch(qtrans_getLanguage()) {
+														case 'es': ?>
+															Hora:
+															<?                        
+														break;
+														case 'en': ?>
+															Time:
+															<?                        
+														break;
+													}
+												?>
+											</span> <?php echo $hora; ?>
 											</li>
 										<?php } ?>
 									</ul>
 								</div>
 								<div class="dg-share">
-									<h4>COMPARTIR EVENTO:</h4>
+									<h4>
+										<?php
+											switch(qtrans_getLanguage()) {
+												case 'es': ?>
+													COMPARTIR EVENTO:
+													<?                        
+												break;
+												case 'en': ?>
+													SHARE:
+													<?                        
+												break;
+											}
+										?>
+									</h4>
 									<?php 
 										echo do_shortcode('[ssba-buttons]');
 									?>
@@ -87,7 +152,20 @@
 								?>
 									<div class="dg-tickets"> 
 										<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link">
-											<span>Comprar tickets</span>
+											<span>
+												<?php
+													switch(qtrans_getLanguage()) {
+														case 'es': ?>
+															Comprar tickets
+															<?                        
+														break;
+														case 'en': ?>
+															Buy tickets
+															<?                        
+														break;
+													}
+												?>
+											</span>
 											<i class="fal fa-long-arrow-right"></i>
 										</a>
 									</div>
@@ -107,7 +185,20 @@
 			</div>
 
 			<div class="dates related-concerts">
-				<h3>Otros conciertos</h3>
+				<h3>
+					<?php
+						switch(qtrans_getLanguage()) {
+							case 'es': ?>
+								Otros conciertos
+							<?                        
+							break;
+							case 'en': ?>
+								Other events
+								<?                        
+							break;
+						}
+					?>
+				</h3>
 				<ul class="concert-list white row">
 					<?php	
 						$idDelPost = get_the_ID();
@@ -174,7 +265,20 @@
 										?>
 
 										<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link <?php echo $classDisabled; ?>">
-											<span>Comprar tickets</span>
+											<span>
+												<?php
+													switch(qtrans_getLanguage()) {
+														case 'es': ?>
+															Comprar tickets
+															<?                        
+														break;
+														case 'en': ?>
+															Buy tickets
+															<?                        
+														break;
+													}
+												?>
+											</span>
 											<i class="fal fa-long-arrow-right"></i>
 										</a>
 									</div>

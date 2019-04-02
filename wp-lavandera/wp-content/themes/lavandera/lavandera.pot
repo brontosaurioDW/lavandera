@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lavandera\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-12 03:42+0000\n"
+"POT-Creation-Date: 2019-03-31 01:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,19 +16,11 @@ msgstr ""
 "X-Loco-Version: 2.2.1; wp-5.1"
 
 #. Name of the template
-msgid "Biografia"
-msgstr ""
-
-#. Author of the theme
-msgid "Brontosaurio"
+msgid "Media"
 msgstr ""
 
 #. Name of the template
-msgid "Conciertos"
-msgstr ""
-
-#. Name of the template
-msgid "Contacto"
+msgid "Concierto"
 msgstr ""
 
 #. Name of the template
@@ -36,7 +28,35 @@ msgid "Discografia"
 msgstr ""
 
 #. Name of the template
+msgid "Contacto"
+msgstr ""
+
+#. Name of the template
+msgid "Noticias"
+msgstr ""
+
+#. Name of the template
+msgid "Notas"
+msgstr ""
+
+#. Name of the template
 msgid "Front Page"
+msgstr ""
+
+#. Name of the template
+msgid "Biografia"
+msgstr ""
+
+#. Name of the template
+msgid "Eventos"
+msgstr ""
+
+#. Name of the theme
+msgid "Lavandera"
+msgstr ""
+
+#. Description of the theme
+msgid "Tema diseñado para el sitio web Horacio Lavandera"
 msgstr ""
 
 #. URI of the theme
@@ -44,18 +64,6 @@ msgstr ""
 msgid "http://brontosaurio.com.ar"
 msgstr ""
 
-#. Name of the theme
-msgid "Lavandera"
-msgstr ""
-
-#. Name of the template
-msgid "Media"
-msgstr ""
-
-#. Name of the template
-msgid "Noticias"
-msgstr ""
-
-#. Description of the theme
-msgid "Tema diseñado para el sitio web Horacio Lavandera"
+#. Author of the theme
+msgid "Brontosaurio"
 msgstr ""

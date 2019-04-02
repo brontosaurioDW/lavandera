@@ -14,7 +14,7 @@
 
 	<section class="contact">
 		<div class="container">
-			<h2>Contacto</h2>
+			<h2><?php the_title(); ?></h2>
 
 			<div class="row">
 				<div class="col-lg-4">
@@ -29,7 +29,11 @@
 				<div class="col-lg-5">
 					<div class="form">
 						<?php 
-							echo do_shortcode('[contact-form-7 id="141" title="Formulario de contacto"]');
+						    if (qtrans_getLanguage () == 'es') {
+								echo do_shortcode ('[contact-form-7 id="141" title="Formulario de contacto (es)"]');
+							}elseif (qtrans_getLanguage () == 'en') {
+								echo do_shortcode ('[contact-form-7 id="262" title="Contact form (en)"]');
+							}; 
 						?>										
 					</div>
 				</div>

@@ -16,8 +16,18 @@
 		<div class="container">
 			<span class="img-date">
 				<?php
-					$fecha_post = get_post();
-					echo apply_filters( 'the_date', get_the_date(), get_option( 'date_format' ), '', '' );
+					/*$fecha_post = get_post();
+					echo apply_filters( 'the_date', get_the_date(), get_option( 'date_format' ), '', '' );*/
+				?>
+				<?php
+					switch(qtrans_getLanguage()) {
+						case 'es': 
+							the_time('j \d\e F \d\e Y');            
+						break;
+						case 'en': 
+							the_time('F jS, Y');                   
+						break;
+					}
 				?>
 			</span>
 			
@@ -37,7 +47,20 @@
 				?>
 
 				<div class="col-lg-4">
-					<span class="share-title">Compartir noticia:</span>
+					<span class="share-title">
+						<?php
+							switch(qtrans_getLanguage()) {
+								case 'es': ?>
+									Compartir noticia:
+								<?                        
+								break;
+								case 'en': ?>
+									Share:
+									<?                        
+								break;
+							}
+						?>
+					</span>
 					<?php 
 						echo do_shortcode('[ssba-buttons]');
 					?>
@@ -80,7 +103,20 @@
 					?>
 				</div>
 				<div class="col-lg-4 sidebar">
-					<h2>Últimas noticias</h2>
+					<h2>
+						<?php
+							switch(qtrans_getLanguage()) {
+								case 'es': ?>
+									Últimas noticias
+								<?                        
+								break;
+								case 'en': ?>
+									News
+									<?                        
+								break;
+							}
+						?>
+					</h2>
 					<ul class="news-list">
 						<?php
 							$idDelPost = get_the_ID();
@@ -107,7 +143,18 @@
 									?>	
 								</span>
 
-								<span class="img-date"><?php the_date('j \d\e F \d\e Y'); ?></span>
+								<span class="img-date">
+									<?php
+										switch(qtrans_getLanguage()) {
+											case 'es': 
+												the_time('j \d\e F \d\e Y');            
+											break;
+											case 'en': 
+												the_time('F jS, Y');                   
+											break;
+										}
+									?>
+								</span>
 
 								<h3><?php the_title(); ?></h3>
 							</a>

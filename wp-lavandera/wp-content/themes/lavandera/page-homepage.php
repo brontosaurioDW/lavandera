@@ -51,7 +51,20 @@
 					<div class="container">
 						<!-- HERO block tablet / desktop -->
 						<div class="d-none d-md-block cover-info">
-							<p class="cover-next">Próximo concierto</p>
+							<p class="cover-next">
+								<?php
+									switch(qtrans_getLanguage()) {
+										case 'es': ?>
+											Próximo concierto
+											<?                        
+										break;
+										case 'en': ?>
+											Next concert
+											<?                        
+										break;
+									}
+								?>
+							</p>
 							<p class="cover-title">
 								<span class="title-month"><?php echo $fecha->format('M'); ?></span>
 								<span class="title-date"><?php echo $fecha->format('j'); ?></span>
@@ -65,7 +78,21 @@
 
 						<!-- HERO block mobile -->
 						<div class="col-12 d-md-none">
-							<p class="cover-next">Próximo concierto: <span class="semi-bold"><?php echo $fecha->format('M j'); ?></span></p>
+							<p class="cover-next">
+								<?php
+									switch(qtrans_getLanguage()) {
+										case 'es': ?>
+											Próximo concierto
+											<?                        
+										break;
+										case 'en': ?>
+											Next concert
+											<?                        
+										break;
+									}
+								?>
+								<span class="semi-bold"><?php echo $fecha->format('M j'); ?></span>
+							</p>
 							<p class="cover-title extra-bold"><?php the_title(); ?></p>
 							<p class="cover-venue">
 								<span><?php echo get_field('lugar'); ?></span>
@@ -84,7 +111,20 @@
 	<?php endif; ?>
 
 	<section class="dates">
-		<h2 class="sr-only">Próximos conciertos</h2>
+		<h2 class="sr-only">
+			<?php
+				switch(qtrans_getLanguage()) {
+					case 'es': ?>
+						Próximos conciertos
+						<?                        
+					break;
+					case 'en': ?>
+						Upcoming concerts
+						<?                        
+					break;
+				}
+			?>
+		</h2>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
@@ -156,7 +196,20 @@
 
 			<div class="cta-wrapper">
 				<a href="<?=get_permalink( get_page_by_title('Eventos') ); ?>" class="cta-link">
-					<span>Ver todos los conciertos </span>
+					<span>
+						<?php
+							switch(qtrans_getLanguage()) {
+								case 'es': ?>
+									Ver todos los conciertos
+									<?                        
+								break;
+								case 'en': ?>
+									View all
+									<?                        
+								break;
+							}
+						?>
+					</span>
 					<i class="fal fa-long-arrow-right"></i>
 				</a>
 			</div>
@@ -167,7 +220,20 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 news-container">
-					<h2>Últimas noticias</h2>
+					<h2>
+						<?php
+							switch(qtrans_getLanguage()) {
+								case 'es': ?>
+									Últimas noticias
+									<?                        
+								break;
+								case 'en': ?>
+									News
+									<?                        
+								break;
+							}
+						?>	
+					</h2>
 
 					<ul class="news-list row">
 						<?php
@@ -194,7 +260,18 @@
 									?>	
 								</span>
 
-								<span class="img-date"><?php the_date('j \d\e F \d\e Y'); ?></span>
+								<span class="img-date">
+									<?php
+										switch(qtrans_getLanguage()) {
+											case 'es': 
+												the_time('j \d\e F \d\e Y');            
+											break;
+											case 'en': 
+												the_time('F jS, Y');                   
+											break;
+										}
+									?>
+								</span>
 
 								<h3><?php the_title(); ?></h3>
 							</a>
@@ -209,7 +286,20 @@
 
 					<div class="cta-wrapper">
 						<a href="<?=get_permalink( get_page_by_title('Noticias') ); ?>" class="cta-link">
-							<span>Ver todas las noticias</span>
+							<span>
+								<?php
+									switch(qtrans_getLanguage()) {
+										case 'es': ?>
+											Ver todas las noticias
+											<?                        
+										break;
+										case 'en': ?>
+											View all
+											<?                        
+										break;
+									}
+								?>
+							</span>
 							<i class="fal fa-long-arrow-right"></i>
 						</a>
 					</div>

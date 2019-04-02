@@ -16,18 +16,44 @@
 		<div class="container">
 			<div class="row justify-content-md-center">
 				<div class="col-sm-12">
-					<h2>Media</h2>
+					<h2><?php the_title(); ?></h2>
 
 					<div class="row">
 						<div class="col-lg-8">							
 							<nav>
 								<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 									<a class="nav-item nav-link active" id="foto-tab" data-toggle="tab" href="#foto" role="tab" aria-controls="foto" aria-selected="true">
-										<span>Fotos</span>
+										<span>
+											<?php
+												switch(qtrans_getLanguage()) {
+													case 'es': ?>
+														Fotos
+														<?                        
+													break;
+													case 'en': ?>
+														Photos
+														<?                        
+													break;
+												}
+											?>
+										</span>
 										<i class="fal fa-long-arrow-right"></i>
 									</a>
 									<a class="nav-item nav-link" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video" aria-selected="false">
-										<span>Videos</span>
+										<span>
+											<?php
+												switch(qtrans_getLanguage()) {
+													case 'es': ?>
+														Videos
+														<?                        
+													break;
+													case 'en': ?>
+														Videos
+														<?                        
+													break;
+												}
+											?>
+										</span>
 										<i class="fal fa-long-arrow-right"></i>
 									</a>
 								</div>
