@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lavandera\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-31 01:58+0000\n"
+"POT-Creation-Date: 2019-03-31 20:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -66,4 +66,8 @@ msgstr ""
 
 #. Author of the theme
 msgid "Brontosaurio"
+msgstr ""
+
+msgctxt "footer.php"
+msgid "Todos los derechos reservados"
 msgstr ""

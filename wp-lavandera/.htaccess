@@ -10,8 +10,8 @@ RewriteRule . /dev/horacio-lavandera/index.php [L]
 
 # END WordPress
 # BEGIN WP HTPASSWD
-AuthName "Horacio Lavandera - Restricted area"
-AuthType Basic
-AuthUserFile /home/u210710958/domains/brontosaurio.com.ar/public_html/dev/horacio-lavandera/.htpasswd
-Require valid-user
+# AuthName "Horacio Lavandera - Restricted area"
+# AuthType Basic
+# AuthUserFile /home/u210710958/domains/brontosaurio.com.ar/public_html/dev/horacio-lavandera/.htpasswd
+# Require valid-user
 # END WP HTPASSWD

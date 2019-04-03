@@ -54,7 +54,20 @@
 							</ul>
 						</div>
 						<div class="col-sm-12">
-							<span class="disclaimer">© 2019 Horacio Lavandera. All rights reserved.</span>
+							<span class="disclaimer">© 2019 Horacio Lavandera. 
+							<?php
+								switch(qtrans_getLanguage()) {
+									case 'es': ?>
+										Todos los derechos reservados.
+										<?                        
+									break;
+									case 'en': ?>
+										All rights reserved.
+										<?                        
+									break;
+								}
+							?>
+							</span>
 						</div>
 					</div>
 				</div>

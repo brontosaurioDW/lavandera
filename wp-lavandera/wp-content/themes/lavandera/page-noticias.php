@@ -16,7 +16,20 @@
 		<div class="container">
 			<div class="row justify-content-md-center">
 				<div class="col-sm-12">
-					<h2>Últimas noticias</h2>
+					<h2>
+						<?php
+							switch(qtrans_getLanguage()) {
+								case 'es': ?>
+									Últimas noticias
+								<?                        
+								break;
+								case 'en': ?>
+									News
+									<?                        
+								break;
+							}
+						?>
+					</h2>
 					<ul class="news-list row">
 						<?php
 							// Get the 'Profiles' post type
@@ -43,7 +56,18 @@
 										?>	
 									</span>
 
-									<span class="img-date"><?php the_date('j \d\e F \d\e Y'); ?></span>
+									<span class="img-date">
+										<?php
+										switch(qtrans_getLanguage()) {
+											case 'es': 
+												the_time('j \d\e F \d\e Y');            
+											break;
+											case 'en': 
+												the_time('F jS, Y');                   
+											break;
+										}
+									?>									
+									</span>
 
 									<h3><?php the_title(); ?></h3>
 								</a>

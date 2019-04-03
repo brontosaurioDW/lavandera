@@ -16,7 +16,20 @@
 		<div class="container">
 			<div class="row justify-content-md-center">
 				<div class="col-sm-12">
-					<h2>Últimos conciertos</h2>
+					<h2>
+						<?php
+							switch(qtrans_getLanguage()) {
+								case 'es': ?>
+									Últimos conciertos
+									<?                        
+								break;
+								case 'en': ?>
+									Last concerts
+									<?                        
+								break;
+							}
+						?>
+					</h2>
 					<ul class="concert-list row">
 						<?php
 							// Get the 'Profiles' post type
@@ -88,7 +101,20 @@
 										?>
 
 										<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link <?php echo $classDisabled; ?>">
-											<span>Comprar tickets</span>
+											<span>
+												<?php
+													switch(qtrans_getLanguage()) {
+														case 'es': ?>
+															Comprar tickets
+															<?                        
+														break;
+														case 'en': ?>
+															Buy tickets
+															<?                        
+														break;
+													}
+												?>
+											</span>
 											<i class="fal fa-long-arrow-right"></i>
 										</a>
 									</div>

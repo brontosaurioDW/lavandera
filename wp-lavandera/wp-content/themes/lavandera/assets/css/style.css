@@ -580,13 +580,13 @@ footer .disclaimer {
 .cover {
 	max-width: 1140px;
 	margin: auto;
-	background:linear-gradient(0deg,rgba(0,0,0,0.6), rgba(0,0,0,0.6));
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	color: #fff;
 	text-align: center;
 	-webkit-filter: grayscale(100%);
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
 	filter: grayscale(100%);
 }
 
@@ -661,7 +661,7 @@ footer .disclaimer {
 	    font-size: 19px;
 	    letter-spacing: 3px;
 	    line-height: normal;
-	    font-weight: 200;
+	    font-weight: 300;
 	}
 
 	.cover .cover-title {
@@ -672,11 +672,11 @@ footer .disclaimer {
 
 	.cover .cover-title .title-month {
 		display: block;
-		font-size: 40px;
+		font-size: 45px;
 	}
 
 	.cover .cover-title .title-date {
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 53px;
 	}
 
@@ -709,7 +709,7 @@ footer .disclaimer {
 @media (min-width: 992px) {
 	.cover .cover-next {
 		font-size: 15px;
-		font-weight: 200;
+		font-weight: 300;
 		letter-spacing: 4px;
 		margin-bottom: 10px;
 	}
@@ -749,7 +749,7 @@ footer .disclaimer {
 
 
 .dates .concert-list {
-	margin: 15px 0; 
+	margin: 15px 0 30px;
 }
 
 .dates-concert {
@@ -968,7 +968,7 @@ footer .disclaimer {
 
 @media (min-width: 768px) {
 	.dates .concert-list {
-	    margin: 15px -15px;
+		margin: 15px -10px 35px -10px;
 	}
 
 	.dates .concert-list li {
@@ -988,7 +988,7 @@ footer .disclaimer {
 	}
 
 	.dates .concert-list {
-		margin: 15px -10px;
+		margin: 15px -10px 35px -10px;
 	}
 
 	.dates .concert-list li {
@@ -1029,8 +1029,11 @@ footer .disclaimer {
 }
 
 .news-list .news-single img {
+	-o-object-fit: cover;
 	object-fit: cover;
-	object-position: top;
+	-o-object-position: center;
+	object-position: center;
+
 	max-width: none;
 	height: 195px;
 	width: 100%;
@@ -1295,6 +1298,10 @@ footer .disclaimer {
 	margin-top: 0;
 }
 
+.contact .social-icons {
+	margin-top: 25px;
+}
+
 .form label {
 	display: block;
 	margin-bottom: 10px;
@@ -1316,8 +1323,7 @@ footer .disclaimer {
 }
 
 .form input {
-	line-height: 40px;
-	padding: 0 10px;
+	padding: 10px;
 }
 
 .form textarea {
@@ -1376,10 +1382,9 @@ div.wpcf7-acceptance-missing {
 }
 
 .disc-list .disc-info-wrapper {
-	display: -ms-grid;
-	display: grid;
-	-ms-grid-columns: 130px auto;
-	grid-template-columns: 130px auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;	
 }
 
 .disc-img {
@@ -1391,12 +1396,14 @@ div.wpcf7-acceptance-missing {
 .disc-img img {
 	width: 130px;
 	height: 100%;
+	-o-object-fit: cover;
 	object-fit: cover;
 	max-width: unset;	
 	transition: .3s;
 }
 
 .disc-info {
+	width: 75%;
 	padding-left: 20px;
 }
 
@@ -1644,7 +1651,8 @@ div.wpcf7-acceptance-missing {
 	width: 100%;
     max-width: unset;
     height: 100%;
-    object-fit: cover;
+	-o-object-fit: cover;
+	object-fit: cover;
 }
 
 .media-list .video-wrapper iframe {
@@ -1720,3 +1728,46 @@ div.wpcf7-acceptance-missing {
 	width: auto!important;
 	height: 16px;
 }
+
+
+
+/*  CROSSBROWSING  */
+
+	/*  NOTICIAS  */
+
+	.jsie:not(.ie-false) .news-list .news-single .img-wrapper {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+
+	.jsie:not(.ie-false) .news-list .news-single .img-wrapper img {
+		height: auto;
+		width: 100%;
+	}
+
+	/*  MEDIA  */
+
+	.jsie:not(.ie-false) .img-preview {
+		min-height: unset;
+	}
+
+	.jsie:not(.ie-false) .media-list .img-wrapper, 
+	.jsie:not(.ie-false) .media-list .img-wrapper {
+		background: #ececec;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+
+	.jsie:not(.ie-false) .media-list .img-wrapper img, 
+	.jsie:not(.ie-false) .media-list .img-wrapper img {
+		width: 100%;
+		height: auto;
+	}
