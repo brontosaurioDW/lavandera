@@ -17,9 +17,9 @@
 			<h2><?php the_title(); ?></h2>
 
 			<div class="row">
-				<div class="col-lg-4">
+				<div class="col-lg-3">
 					<?php	
-						$page_id = 29 ;
+						$page_id = 29;
 						$page_data = get_page ( $page_id );
 						$content = apply_filters ( 'the_content' , $page_data -> post_content );
 						$title = $page_data -> post_title;
@@ -37,7 +37,7 @@
 						?>										
 					</div>
 				</div>
-				<div class="col-lg-3 d-none d-lg-block">
+				<div class="col-lg-3 offset-lg-1 d-none d-lg-block">
 					<ul class="social-icons vertical">
 						<li>
 							<a target="_blank" href="<?php echo of_get_option('sn_facebook'); ?>">

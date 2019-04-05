@@ -195,7 +195,7 @@
 			</div>
 
 			<div class="cta-wrapper">
-				<a href="<?=get_permalink( get_page_by_title('Eventos') ); ?>" class="cta-link">
+				<a href="<?php echo get_page_link("19"); ?>" class="cta-link">
 					<span>
 						<?php
 							switch(qtrans_getLanguage()) {
@@ -285,7 +285,7 @@
 
 
 					<div class="cta-wrapper">
-						<a href="<?=get_permalink( get_page_by_title('Noticias') ); ?>" class="cta-link">
+						<a href="<?php echo get_page_link("21"); ?>" class="cta-link">
 							<span>
 								<?php
 									switch(qtrans_getLanguage()) {
