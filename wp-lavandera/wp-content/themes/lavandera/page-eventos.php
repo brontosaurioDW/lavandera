@@ -20,11 +20,11 @@
 						<?php
 							switch(qtrans_getLanguage()) {
 								case 'es': ?>
-									Últimos conciertos
+									Conciertos
 									<?                        
 								break;
 								case 'en': ?>
-									Last concerts
+									Concerts
 									<?                        
 								break;
 							}

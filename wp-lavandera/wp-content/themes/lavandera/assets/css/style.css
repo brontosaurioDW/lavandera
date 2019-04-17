@@ -110,7 +110,7 @@ html{
    ===================== */
 
 body {
-	padding-top: 75px;
+	padding-top: 55px;
 }
 
 @media screen and (min-width: 768px) {
@@ -623,10 +623,10 @@ footer .disclaimer {
 	width: 100%;
 	margin: 20px 0;
 	padding: 20px 15px;
-	font-size: 35px;
+	font-size: 26px;
 	border: 2px solid #fff;
 	text-transform: uppercase;
-	letter-spacing: 5px;
+	letter-spacing: 3px;
 }
 
 .cover .cover-venue,
@@ -667,7 +667,7 @@ footer .disclaimer {
 	.cover .cover-title {
 		padding: 35px 15px;
 	    margin: 5px 0;
-	    line-height: 120%;
+	    line-height: 160%;
 	}
 
 	.cover .cover-title .title-month {
@@ -682,7 +682,7 @@ footer .disclaimer {
 
 	.cover .title-name {
 		font-weight: 900;
-		font-size: 30px;
+		font-size: 28px;
 		text-transform: uppercase;
 		letter-spacing: 3px;
 		margin: 10px 0 15px;
@@ -834,6 +834,11 @@ footer .disclaimer {
 	padding-right: 6px;
     margin-right: 3px;
 	border-right: 1px solid #373737;
+}
+
+.dg-info-grid .dg-ig-buy {
+	padding: 0 0 15px 15px;
+	display: inline-block;
 }
 
 .dg-info-grid .dg-ig-venue a {
@@ -1441,7 +1446,7 @@ div.wpcf7-acceptance-missing {
 
 .disc-info .share li,
 .ssba a {
-	padding: 0 23px 0 0;
+	padding: 0 15px 0 0;
 	display: inline-block;
     font-size: 25px;
 }

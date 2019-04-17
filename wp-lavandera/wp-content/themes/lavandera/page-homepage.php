@@ -115,11 +115,11 @@
 			<?php
 				switch(qtrans_getLanguage()) {
 					case 'es': ?>
-						Próximos conciertos
+						Conciertos
 						<?                        
 					break;
 					case 'en': ?>
-						Upcoming concerts
+						Concerts
 						<?                        
 					break;
 				}
@@ -160,15 +160,17 @@
 								$fecha = new DateTime($fecha); //objeto fecha
 						?>			
 
-							<li class="col-sm-12 col-md-6 col-lg-4">
-								<a href="<?php the_permalink($post->ID); ?>">
-									<div class="date-grid">
-										<div class="dg-date">
+							<li class="col-sm-12 col-md-6 col-lg-4">								
+								<div class="date-grid">
+									<div class="dg-date">
+										<a href="<?php the_permalink($post->ID); ?>">
 											<span class="day extra-bold"><?php echo $fecha->format('j'); ?></span>
 											<span class="month extra-bold"><?php echo $fecha->format('M'); ?></span>
 											<span class="year"><?php echo $fecha->format('Y'); ?></span>
-										</div>
-										<div class="dg-info-grid">
+										</a>
+									</div>
+									<div class="dg-info-grid">
+										<a href="<?php the_permalink($post->ID); ?>">
 											<div class="dg-ig-title">
 												<p class="ig-title"><?php the_title(); ?></p>
 											</div>
@@ -181,9 +183,37 @@
 													<p><?php echo get_field('pais'); ?></p>
 												</div>
 											</div>
-										</div>
+										</a>
+
+										<?php 
+											$link_ticket = get_field('tickets');
+											
+											if ($link_ticket){ 
+												$classDisabled = '';
+											} else {
+												$classDisabled = 'disabled';
+											}
+										?>
+
+										<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link dg-ig-buy <?php echo $classDisabled; ?>">
+											<span class="">
+												<?php
+													switch(qtrans_getLanguage()) {
+														case 'es': ?>
+															Comprar tickets
+															<?                        
+														break;
+														case 'en': ?>
+															Buy tickets
+															<?                        
+														break;
+													}
+												?>
+											</span>
+											<i class="fal fa-long-arrow-right"></i>
+										</a>
 									</div>
-								</a>
+								</div>								
 							</li>
 
 						<?php

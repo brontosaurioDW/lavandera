@@ -42,7 +42,7 @@ function Discografia() {
 
 			$(discInfo).on('click',  function(event) {
 				event.preventDefault();
-				$(discSongs).slideToggle(500);
+				$(discSongs).slideDown(500);
 			});
 
 			$(closeSongs).on('click',  function(event) {
