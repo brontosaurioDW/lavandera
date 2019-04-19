@@ -590,7 +590,7 @@ footer .disclaimer {
 	filter: grayscale(100%);
 }
 
-.cover > a {
+.cover .hero-overlay {
 	height: 100vh;
 	max-height: 475px;
 	display: -webkit-box;
@@ -600,6 +600,24 @@ footer .disclaimer {
 	-ms-flex-align: center;
 	-ms-grid-row-align: center;
 	align-items: center;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.cover .cta-link {
+    position: absolute;
+    background: transparent;
+    text-align: left;
+    width: auto;
+    display: inline-block;
+    padding: 0;
+    margin-left: 40px;
+    bottom: 25px;
+}
+
+.cover a {
+	width: 100%;
 	color: white;
 }
 

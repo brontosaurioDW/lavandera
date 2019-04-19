@@ -45,68 +45,101 @@
 					$fecha = get_field('fecha', false, false); //fecha en bruto
 					$fecha = new DateTime($fecha); //objeto fecha
 			?>
-			
-			<a href="<?php the_permalink($post->ID); ?>">
-				<div class="cover-container">
-					<div class="container">
-						<!-- HERO block tablet / desktop -->
-						<div class="d-none d-md-block cover-info">
-							<p class="cover-next">
-								<?php
-									switch(qtrans_getLanguage()) {
-										case 'es': ?>
-											Próximo concierto
-											<?                        
-										break;
-										case 'en': ?>
-											Next concert
-											<?                        
-										break;
-									}
-								?>
-							</p>
-							<p class="cover-title">
-								<span class="title-month"><?php echo $fecha->format('M'); ?></span>
-								<span class="title-date"><?php echo $fecha->format('j'); ?></span>
-							</p>
-							<p class="title-name"><?php the_title(); ?></p>
-							<p class="cover-venue"><?php echo get_field('lugar'); ?></p>
-							<p class="cover-country">
-								<span><?php echo get_field('ciudad'); ?></span> | <?php echo get_field('pais'); ?>
-							</p>
-						</div>
 
-						<!-- HERO block mobile -->
-						<div class="col-12 d-md-none">
-							<p class="cover-next">
-								<?php
-									switch(qtrans_getLanguage()) {
-										case 'es': ?>
-											Próximo concierto
-											<?                        
-										break;
-										case 'en': ?>
-											Next concert
-											<?                        
-										break;
-									}
-								?>
-								<span class="semi-bold"><?php echo $fecha->format('M j'); ?></span>
-							</p>
-							<p class="cover-title extra-bold"><?php the_title(); ?></p>
-							<p class="cover-venue">
-								<span><?php echo get_field('lugar'); ?></span>
-								<span><?php echo get_field('ciudad'); ?></span>
-							</p>
-							<p class="country"><?php echo get_field('pais'); ?></p>
+			<div class="hero-overlay">
+				<a href="<?php the_permalink($post->ID); ?>">
+					<div class="cover-container">
+						<div class="container">
+							<!-- HERO block tablet / desktop -->
+							<div class="d-none d-md-block cover-info">
+								<p class="cover-next">
+									<?php
+										switch(qtrans_getLanguage()) {
+											case 'es': ?>
+												Próximo concierto
+												<?                        
+											break;
+											case 'en': ?>
+												Next concert
+												<?                        
+											break;
+										}
+									?>
+								</p>
+								<p class="cover-title">
+									<span class="title-month"><?php echo $fecha->format('M'); ?></span>
+									<span class="title-date"><?php echo $fecha->format('j'); ?></span>
+								</p>
+								<p class="title-name"><?php the_title(); ?></p>
+								<p class="cover-venue"><?php echo get_field('lugar'); ?></p>
+								<p class="cover-country">
+									<span><?php echo get_field('ciudad'); ?></span> | <?php echo get_field('pais'); ?>
+								</p>
+							</div>
+
+							<!-- HERO block mobile -->
+							<div class="col-12 d-md-none">
+								<p class="cover-next">
+									<?php
+										switch(qtrans_getLanguage()) {
+											case 'es': ?>
+												Próximo concierto
+												<?                        
+											break;
+											case 'en': ?>
+												Next concert
+												<?                        
+											break;
+										}
+									?>
+									<span class="semi-bold"><?php echo $fecha->format('M j'); ?></span>
+								</p>
+								<p class="cover-title extra-bold"><?php the_title(); ?></p>
+								<p class="cover-venue">
+									<span><?php echo get_field('lugar'); ?></span>
+									<span><?php echo get_field('ciudad'); ?></span>
+								</p>
+								<p class="country"><?php echo get_field('pais'); ?></p>
+							</div>
 						</div>
-						<?php
-							endwhile;
-							wp_reset_query();
-						?>
 					</div>
-				</div>
-			</a>
+				</a>
+
+				<?php 
+					$link_ticket = get_field('tickets');
+					
+					if ($link_ticket){ 
+						$classDisabled = '';
+					} else {
+						$classDisabled = 'disabled';
+					}
+				?>
+
+				<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link dg-ig-buy <?php echo $classDisabled; ?>">
+					<span class="">
+						<?php
+							switch(qtrans_getLanguage()) {
+								case 'es': ?>
+									Comprar tickets
+									<?                        
+								break;
+								case 'en': ?>
+									Buy tickets
+									<?                        
+								break;
+							}
+						?>
+					</span>
+					<i class="fal fa-long-arrow-right"></i>
+				</a>
+			</div>
+			
+				
+
+			<?php
+				endwhile;
+				wp_reset_query();
+			?>
 		</section>
 	<?php endif; ?>
 
