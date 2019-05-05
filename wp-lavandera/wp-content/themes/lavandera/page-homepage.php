@@ -11,8 +11,6 @@
 ?>
 
 <?php get_header(); ?>
-
-
 	<?php 
 		$image = get_field('imagen_evento_destacado');
 
@@ -26,15 +24,18 @@
 				$args = array(
 				    'post_type' => 'eventos',
 					'showposts'=> '1',
-					'order' => 'ASC',
-					'meta_query' => array( 
-			            array(
-			                'key' => 'fecha', 
-			                'value' => date("Ymd"),
-			                'compare' => '>=', 
-			                'type' => 'DATE'
-		                )
-		            )				
+					'meta_query' => array(
+						array(
+							'key' => 'fecha',
+							'order_by' => 'meta_value', 
+							'order' => 'ASC',
+						),
+						array(
+							'key' => 'es_evento_destacado',
+							'compare' => '=',
+							'value' => '1'
+						)
+					)			
 				);
 
 				$loop = new WP_Query($args);
@@ -46,95 +47,93 @@
 					$fecha = new DateTime($fecha); //objeto fecha
 			?>
 
-			<div class="hero-overlay">
-				<a href="<?php the_permalink($post->ID); ?>">
-					<div class="cover-container">
-						<div class="container">
-							<!-- HERO block tablet / desktop -->
-							<div class="d-none d-md-block cover-info">
-								<p class="cover-next">
-									<?php
-										switch(qtrans_getLanguage()) {
-											case 'es': ?>
-												Próximo concierto
-												<?                        
-											break;
-											case 'en': ?>
-												Next concert
-												<?                        
-											break;
-										}
-									?>
-								</p>
-								<p class="cover-title">
-									<span class="title-month"><?php echo $fecha->format('M'); ?></span>
-									<span class="title-date"><?php echo $fecha->format('j'); ?></span>
-								</p>
-								<p class="title-name"><?php the_title(); ?></p>
-								<p class="cover-venue"><?php echo get_field('lugar'); ?></p>
-								<p class="cover-country">
-									<span><?php echo get_field('ciudad'); ?></span> | <?php echo get_field('pais'); ?>
-								</p>
-							</div>
+				<div class="hero-overlay">
+					<a href="<?php the_permalink($post->ID); ?>">
+						<div class="cover-container">
+							<div class="container">
+								<!-- HERO block tablet / desktop -->
+								<div class="d-none d-md-block cover-info">
+									<p class="cover-next">
+										<?php
+											switch(qtrans_getLanguage()) {
+												case 'es': ?>
+													Concierto destacado
+													<?                        
+												break;
+												case 'en': ?>
+													Featured event
+													<?                        
+												break;
+											}
+										?>
+									</p>
+									<p class="cover-title">
+										<span class="title-month"><?php echo $fecha->format('M'); ?></span>
+										<span class="title-date"><?php echo $fecha->format('j'); ?></span>
+									</p>
+									<p class="title-name"><?php the_title(); ?></p>
+									<p class="cover-venue"><?php echo get_field('lugar'); ?></p>
+									<p class="cover-country">
+										<span><?php echo get_field('ciudad'); ?></span> | <?php echo get_field('pais'); ?>
+									</p>
+								</div>
 
-							<!-- HERO block mobile -->
-							<div class="col-12 d-md-none">
-								<p class="cover-next">
-									<?php
-										switch(qtrans_getLanguage()) {
-											case 'es': ?>
-												Próximo concierto
-												<?                        
-											break;
-											case 'en': ?>
-												Next concert
-												<?                        
-											break;
-										}
-									?>
-									<span class="semi-bold"><?php echo $fecha->format('M j'); ?></span>
-								</p>
-								<p class="cover-title extra-bold"><?php the_title(); ?></p>
-								<p class="cover-venue">
-									<span><?php echo get_field('lugar'); ?></span>
-									<span><?php echo get_field('ciudad'); ?></span>
-								</p>
-								<p class="country"><?php echo get_field('pais'); ?></p>
+								<!-- HERO block mobile -->
+								<div class="col-12 d-md-none">
+									<p class="cover-next">
+										<?php
+											switch(qtrans_getLanguage()) {
+												case 'es': ?>
+													Próximo concierto
+													<?                        
+												break;
+												case 'en': ?>
+													Next concert
+													<?                        
+												break;
+											}
+										?>
+										<span class="semi-bold"><?php echo $fecha->format('M j'); ?></span>
+									</p>
+									<p class="cover-title extra-bold"><?php the_title(); ?></p>
+									<p class="cover-venue">
+										<span><?php echo get_field('lugar'); ?></span>
+										<span><?php echo get_field('ciudad'); ?></span>
+									</p>
+									<p class="country"><?php echo get_field('pais'); ?></p>
+								</div>
 							</div>
 						</div>
-					</div>
-				</a>
+					</a>
 
-				<?php 
-					$link_ticket = get_field('tickets');
-					
-					if ($link_ticket){ 
-						$classDisabled = '';
-					} else {
-						$classDisabled = 'disabled';
-					}
-				?>
+					<?php 
+						$link_ticket = get_field('tickets');
+						
+						if ($link_ticket){ 
+							$classDisabled = '';
+						} else {
+							$classDisabled = 'disabled';
+						}
+					?>
 
-				<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link dg-ig-buy <?php echo $classDisabled; ?>">
-					<span class="">
-						<?php
-							switch(qtrans_getLanguage()) {
-								case 'es': ?>
-									Comprar tickets
-									<?                        
-								break;
-								case 'en': ?>
-									Buy tickets
-									<?                        
-								break;
-							}
-						?>
-					</span>
-					<i class="fal fa-long-arrow-right"></i>
-				</a>
-			</div>
-			
-				
+					<a href="<?php echo get_field('tickets'); ?>" target="_blank" class="cta-link dg-ig-buy <?php echo $classDisabled; ?>">
+						<span class="">
+							<?php
+								switch(qtrans_getLanguage()) {
+									case 'es': ?>
+										Comprar tickets
+										<?                        
+									break;
+									case 'en': ?>
+										Buy tickets
+										<?                        
+									break;
+								}
+							?>
+						</span>
+						<i class="fal fa-long-arrow-right"></i>
+					</a>
+				</div>		
 
 			<?php
 				endwhile;
@@ -173,13 +172,18 @@
 								'order' => 'ASC',								
 								'meta_key' => 'fecha',
 								'orderby'   => 'meta_value',
-								'offset' => 1,
+								//'offset' => 1,
 								'meta_query' => array( 
 						            array(
 						                'key' => 'fecha', 
 						                'value' => date("Ymd"),
 						                'compare' => '>=', 
 						                'type' => 'DATE'
+					                ),
+					                array(
+					                	'key' => 'aparece_en_los_sub_destacados_de_la_home',
+					                	'compare' => '=',
+					                	'value' => '1'
 					                )
 					            )	
 							);
@@ -318,9 +322,14 @@
 								<span class="img-wrapper">
 									<?php 
 										$image = get_field('foto');
-										$size = 'full'; // (thumbnail, medium, large, full or custom size)
-										echo wp_get_attachment_image( $image, $size);										
-									?>	
+
+										if ($image) {
+											$size = 'full'; // (thumbnail, medium, large, full or custom size)
+											echo wp_get_attachment_image( $image, $size);	
+										} else {
+									?>
+										<span class="no-image"></span>
+									<?php } ?>	
 								</span>
 
 								<span class="img-date">

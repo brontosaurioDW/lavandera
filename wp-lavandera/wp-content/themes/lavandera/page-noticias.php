@@ -51,9 +51,14 @@
 									<span class="img-wrapper">
 										<?php 
 											$image = get_field('foto');
-											$size = 'full'; // (thumbnail, medium, large, full or custom size)
-											echo wp_get_attachment_image( $image, $size);										
-										?>	
+
+											if ($image) {
+												$size = 'full'; // (thumbnail, medium, large, full or custom size)
+												echo wp_get_attachment_image( $image, $size);	
+											} else {
+										?>
+											<span class="no-image"></span>
+										<?php } ?>	
 									</span>
 
 									<span class="img-date">
